@@ -110,7 +110,7 @@ const EverglowPromise = () => {
       className="w-full bg-white py-16 px-6 md:px-20 min-h-screen flex items-center"
     >
       <motion.div
-        initial={{ x: "100vw", opacity: 0 }} // right side se hidden
+        initial={{ x: 200, opacity: 0 }} // right side se hidden
         animate={inView ? { x: 0, opacity: 1 } : {}} // jab viewport me aaye tab slide kare
         transition={{ type: "spring", stiffness: 70, damping: 20, duration: 1 }}
         className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-12"
