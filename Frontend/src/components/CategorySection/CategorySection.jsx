@@ -286,10 +286,10 @@ const CategorySection = () => {
     <section className="w-full bg-white py-12 px-4 md:px-12">
       {/* Heading */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
+        <h2 className="text-3xl md:text-4xl font-semibold text-yellow-700">
           Find Your Perfect Match
         </h2>
-        <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
+        <p className="text-lg md:text-xl text-yellow-950 font-medium mt-2">
           Radiance Fits for Everyone
         </p>
       </div>
@@ -320,7 +320,7 @@ const CategorySection = () => {
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
-                  <p className="mt-3 text-sm md:text-base font-medium text-[#CEBB98]">
+                  <p className="mt-3 text-sm md:text-base font-medium text-yellow-700">
                     {cat.title}
                   </p>
                 </Link>

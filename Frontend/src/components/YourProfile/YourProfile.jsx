@@ -105,10 +105,10 @@ const YourProfile = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-teal-800 text-white py-3 rounded-md hover:bg-teal-900 transition"
+              className="w-full bg-[#CEBB98] text-white py-3 rounded-md hover:bg-black transition"
             >
               Update Profile
-            </button>
+            </button> 
           </form>
         </div>
       </div>

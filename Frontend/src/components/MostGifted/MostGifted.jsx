@@ -335,7 +335,7 @@ const GiftTextCard = ({ preHeading, heading, description }) => (
     </p>
     <h3
       style={{ fontFamily: "'Playfair Display', serif" }}
-      className="text-lg sm:text-2xl lg:text-[34px] leading-tight font-semibold text-[#4B2A4B] mb-3"
+      className="text-lg sm:text-2xl lg:text-[34px] leading-tight font-semibold text-yellow-700 mb-3"
     >
       {heading}
     </h3>
@@ -344,7 +344,7 @@ const GiftTextCard = ({ preHeading, heading, description }) => (
     </p>
     <a
       href="#"
-      className="text-xs sm:text-sm text-[#4B2A4B] underline underline-offset-4 hover:no-underline"
+      className="text-xs sm:text-sm text-yellow-700 underline underline-offset-4 hover:no-underline"
     >
       Discover more
     </a>
@@ -363,7 +363,7 @@ const MostGifted = () => {
         <h2
           id="most-gifted-title"
           style={{ fontFamily: "'Playfair Display', serif" }}
-          className="text-center text-[#4B2A4B] tracking-[0.2em] text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 md:mb-16"
+          className="text-center text-yellow-700 tracking-[0.2em] text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 md:mb-16"
         >
           MOST GIFTED
         </h2>

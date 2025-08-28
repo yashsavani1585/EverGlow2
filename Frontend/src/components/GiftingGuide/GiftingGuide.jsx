@@ -64,10 +64,10 @@ const GiftingGuide = () => {
         <section className="w-full bg-white py-12 px-4 md:px-12">
             {/* Heading */}
             <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
+                <h2 className="text-3xl md:text-4xl font-semibold text-yellow-700">
                     GIFTING GUIDE
                 </h2>
-                <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
+                <p className="text-lg md:text-xl text-yellow-950 font-medium mt-2">
                     gifts for your loved one
                 </p>
             </div>

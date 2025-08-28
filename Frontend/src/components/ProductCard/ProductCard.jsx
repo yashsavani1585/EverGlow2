@@ -257,11 +257,11 @@ const ProductCard = ({ product, imageH = "h-[150px] md:h-[200px]" }) => {
 
         {/* Price Row */}
         <div className="flex justify-between items-center mb-3">
-          <span className="text-lg font-semibold text-[#CEBB98]">
+          <span className="text-lg font-semibold text-black">
             {product.price}
           </span>
           {product.oldPrice && (
-            <span className="text-sm line-through text-gray-500">
+            <span className="text-sm line-through text-gray-700">
               {product.oldPrice}
             </span>
           )}

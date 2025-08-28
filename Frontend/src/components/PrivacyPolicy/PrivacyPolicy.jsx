@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="max-w-5xl mx-auto my-10 p-6 bg-white rounded-lg ">
       {/* Title */}
-      <h1 className="text-2xl font-bold text-green-700 mb-4">PRIVACY POLICY</h1>
+      <h1 className="text-2xl font-bold text-yellow-700 mb-4">PRIVACY POLICY</h1>
       <p className="text-gray-700 mb-6">
         At Crystova, your privacy is important to us. We are committed to protecting
         your personal information and handling it transparently and responsibly in

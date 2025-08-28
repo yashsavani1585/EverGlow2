@@ -3,14 +3,14 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="bg-gradient-to-b from-purple-50 to-white py-16 px-6 md:px-20 w-full">
+    <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-6 md:px-20 w-full">
       <div className="max-w-7xl mx-auto">
         {/* Contact Info Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center border-b pb-10">
           {/* Phone */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
-            <div className="bg-purple-100 w-14 h-14 flex items-center justify-center rounded-full shadow-sm mb-2">
-              <FaPhoneAlt className="text-purple-700 text-xl" />
+            <div className="bg-yellow-100 w-14 h-14 flex items-center justify-center rounded-full shadow-sm mb-2">
+              <FaPhoneAlt className="text-yellow-700 text-xl" />
             </div>
             <h3 className="font-semibold text-lg text-gray-900">
               Phone Number
@@ -20,8 +20,8 @@ const Contact = () => {
 
           {/* Email */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
-            <div className="bg-purple-100 w-14 h-14 flex items-center justify-center rounded-full shadow-sm mb-2">
-              <FaEnvelope className="text-purple-700 text-xl" />
+            <div className="bg-yellow-100 w-14 h-14 flex items-center justify-center rounded-full shadow-sm mb-2">
+              <FaEnvelope className="text-yellow-700 text-xl" />
             </div>
             <h3 className="font-semibold text-lg text-gray-900">
               Email Address
@@ -31,8 +31,8 @@ const Contact = () => {
 
           {/* Address */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
-            <div className="bg-purple-100 w-14 h-14 flex items-center justify-center rounded-full shadow-sm mb-2">
-              <FaMapMarkerAlt className="text-purple-700 text-xl" />
+            <div className="bg-yellow-100 w-14 h-14 flex items-center justify-center rounded-full shadow-sm mb-2">
+              <FaMapMarkerAlt className="text-yellow-700 text-xl" />
             </div>
             <h3 className="font-semibold text-lg text-gray-900">
               Office Address
@@ -63,7 +63,7 @@ const Contact = () => {
             </p>
 
             {/* Highlighted Box */}
-            <div className="bg-purple-100 text-gray-800 p-5 rounded-lg border-l-4 border-purple-600 shadow-sm">
+            <div className="bg-yellow-100 text-gray-800 p-5 rounded-lg border-l-4 border-yellow-600 shadow-sm">
               <p className="font-medium leading-relaxed">
                 Engagement rings, wedding bands, and anniversary gifts
                 commemorate milestones, making the jewellery a lifelong symbol
@@ -80,12 +80,12 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-purple-600 transition"
+                  className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-yellow-600 transition"
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-purple-600 transition"
+                  className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-yellow-600 transition"
                 />
               </div>
 
@@ -93,27 +93,27 @@ const Contact = () => {
               <input
                 type="email"
                 placeholder="Email Address"
-                className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-purple-600 transition"
+                className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-yellow-600 transition"
               />
 
               {/* Phone */}
               <input
                 type="text"
                 placeholder="Phone Number"
-                className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-purple-600 transition"
+                className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-yellow-600 transition"
               />
 
               {/* Message */}
               <textarea
                 rows="4"
                 placeholder="Your message here..."
-                className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-purple-600 transition resize-none"
+                className="border-b border-gray-400 w-full py-2 focus:outline-none focus:border-yellow-600 transition resize-none"
               ></textarea>
 
               {/* Button */}
               <button
                 type="submit"
-                className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-md shadow-md w-full md:w-auto transition"
+                className="bg-[#CEBB98] hover:bg-black text-white px-8 py-3 rounded-md shadow-md w-full md:w-auto transition"
               >
                 SUBMIT
               </button>

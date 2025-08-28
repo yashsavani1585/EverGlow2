@@ -123,7 +123,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
           {/* Home Link */}
           <Link
             to="/"
-            className="hover:text-[#a02ca5] transition-colors"
+            className="hover:text-yellow-700 transition-colors"
             onClick={onLinkClick}
           >
             Home
@@ -133,7 +133,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center space-x-1 hover:text-[#a02ca5] transition-colors"
+              className="flex items-center space-x-1 hover:text-yellow-700 transition-colors"
             >
               <span>Shop by Category</span>
               {isOpen ? (
@@ -144,7 +144,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
             </button>
             {isOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg border rounded-md z-20 animate-fadeIn">
-                <ul className="flex flex-col text-[#CEBB98] font-semibold">
+                <ul className="flex flex-col text-yellow-700 font-semibold">
                   {[
                     { name: "RINGS", path: "/rings" },
                     { name: "EARRINGS", path: "/earrings" },
@@ -175,21 +175,21 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
           {/* Static Links */}
           <Link
             to="/giftstore"
-            className="hover:text-[#a02ca5] transition-colors"
+            className="hover:text-yellow-700transition-colors"
             onClick={onLinkClick}
           >
             Gift Store
           </Link>
           <Link
             to="/personalized"
-            className="hover:text-[#a02ca5] transition-colors"
+            className="hover:text-yellow-700 transition-colors"
             onClick={onLinkClick}
           >
             Personalized Jewelry
           </Link>
           <Link
             to="/collections"
-            className="hover:text-[#a02ca5] transition-colors"
+            className="hover:text-yellow-700 transition-colors"
             onClick={onLinkClick}
           >
             Latest Collections
@@ -212,7 +212,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
           <ul className="pt-12 space-y-5 font-semibold px-4">
             {/* Home Link */}
             <li>
-              <Link to="/" onClick={onLinkClick} className="hover:text-[#a02ca5]">
+              <Link to="/" onClick={onLinkClick} className="hover:text-yellow-700">
                 Home
               </Link>
             </li>
@@ -221,7 +221,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
             <li>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center justify-between w-full hover:text-[#a02ca5] transition-colors"
+                className="flex items-center justify-between w-full hover:text-yellow-700 transition-colors"
               >
                 <span>Shop by Category</span>
                 {isOpen ? <FaChevronUp /> : <FaChevronDown />}

@@ -519,7 +519,7 @@
 //             <button className="text-[#CEBB98]">
 //               <FaCamera />
 //             </button>
-//             <button className="ml-2 text-[#CEBB98]">
+//             <button className="ml-2 text-yellow-700">
 //               <FaSearch />
 //             </button>
 //           </div>
@@ -563,7 +563,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [accountOpen, setAccountOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const accountRef = useRef(null);
   const navigate = useNavigate();
 
@@ -604,19 +604,19 @@ const Header = () => {
               sm:max-w-[200px] sm:h-8
               md:max-w-md md:h-10
               lg:max-w-xl lg:h-12
-              border border-[#CEBB98] rounded-lg
+              border border-yellow-700 rounded-lg
               overflow-hidden bg-white
             "
           >
             <input
               type="text"
               placeholder="Search..."
-              className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98]
+              className="flex-grow outline-none text-yellow-700 placeholder-[#CEBB98]
                          text-[11px] sm:text-xs md:text-sm lg:text-base px-2"
             />
             <button
               className="flex items-center justify-center px-2
-                         text-[#CEBB98] hover:text-[#a02ca5] transition-colors
+                         text-yellow-700 hover:text-yellow-900 transition-colors
                          bg-transparent border-none"
             >
               <FaSearch className="text-xs sm:text-sm md:text-base" />
@@ -629,13 +629,13 @@ const Header = () => {
         <div className="flex items-center space-x-4 text-[#CEBB98]">
                     <div className="hidden md:flex items-center space-x-5">
             <Link to="/wishlist">
-              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5] transition-colors">
+              <div className="flex flex-col items-center cursor-pointer hover:text-black transition-colors">
                 <FaHeart className="text-xl" />
                 <span className="hidden sm:block text-xs">Wishlist</span>
               </div>
             </Link>
             <Link to="/cart">
-              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5] transition-colors">
+              <div className="flex flex-col items-center cursor-pointer hover:text-black transition-colors">
                 <FaShoppingCart className="text-xl" />
                 <span className="hidden sm:block text-xs">Cart</span>
               </div>
@@ -654,7 +654,7 @@ const Header = () => {
                   setAccountOpen(!accountOpen);
                 }
               }}
-              className="flex flex-col items-center hover:text-[#a02ca5] transition-colors"
+              className="flex flex-col items-center hover:text-black transition-colors"
             >
               <FaUser className="text-lg md:text-xl" />
               <span className="hidden sm:block text-xs">Account</span>
@@ -662,26 +662,26 @@ const Header = () => {
 
             {isAuthenticated && accountOpen && (
               <div className="absolute top-12 right-0 w-64 bg-white border shadow-lg rounded-md p-4 z-20 animate-fadeIn">
-                <p className="font-medium text-gray-700 mb-3">
+                <p className="font-medium text-[#CEBB98] mb-3">
                   Welcome To Everglow Jewels!
                 </p>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-[#c0a87a]">
                   <Link to="/profile" onClick={handleLinkClick}>
-                    <li className="hover:text-[#CEBB98] mb-2">Your Profile</li>
+                    <li className="hover:text- yellow-700 mb-2">Your Profile</li>
                   </Link>
                   <Link to="/myorder" onClick={handleLinkClick}>
-                    <li className="hover:text-[#CEBB98] mb-2">My Orders</li>
+                    <li className="hover:text-yellow-700 mb-2">My Orders</li>
                   </Link>
                   <Link to="/terms" onClick={handleLinkClick}>
-                    <li className="hover:text-[#CEBB98] mb-2">
+                    <li className="hover:text-yellow-700 mb-2">
                       Terms & Conditions
                     </li>
                   </Link>
                   <Link to="/privacy" onClick={handleLinkClick}>
-                    <li className="hover:text-[#CEBB98] mb-2">Privacy Policy</li>
+                    <li className="hover:text-yellow-700 mb-2">Privacy Policy</li>
                   </Link>
                   <Link to="/contact" onClick={handleLinkClick}>
-                    <li className="hover:text-[#CEBB98] mb-2">Contact Us</li>
+                    <li className="hover:text-yellow-700 mb-2">Contact Us</li>
                   </Link>
                   <li
                     onClick={() => {
@@ -730,13 +730,13 @@ const Header = () => {
           {/* Bottom: Wishlist + Cart */}
           <div className="border-t p-5 flex justify-around text-[#CEBB98]">
             <Link to="/wishlist" onClick={handleLinkClick}>
-              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5]">
+              <div className="flex flex-col items-center cursor-pointer hover:text-black transition-colors">
                 <FaHeart className="text-xl" />
                 <span className="text-xs">Wishlist</span>
               </div>
             </Link>
             <Link to="/cart" onClick={handleLinkClick}>
-              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5]">
+              <div className="flex flex-col items-center cursor-pointer hover:text-black transition-colors">
                 <FaShoppingCart className="text-xl" />
                 <span className="text-xs">Cart</span>
               </div>

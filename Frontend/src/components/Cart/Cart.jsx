@@ -1159,7 +1159,7 @@ const Cart = () => {
                         <button className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-red-600 font-medium">
                           <FaTrash /> REMOVE
                         </button>
-                        <button className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-purple-700 font-medium border-t sm:border-t-0 sm:border-l">
+                        <button className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-red-600 font-medium border-t sm:border-t-0 sm:border-l">
                           <FaHeart /> MOVE TO WISHLIST
                           <span className="hidden sm:inline text-xs text-gray-500">
                             (Need login first)
@@ -1196,12 +1196,12 @@ const Cart = () => {
                     <FaGift className="text-gray-500 mr-2" />
                     <span>Gift Message (Optional)</span>
                   </div>
-                  <button className="text-purple-700 font-medium text-sm hover:underline">
+                  <button className="text-yellow-700 font-medium text-sm hover:underline">
                     Add
                   </button>
                 </div>
                 <Link to="/orderConfirmation">
-                  <button className="w-full bg-[#CEBB98] hover:bg-[#421543] text-white py-3 rounded-md text-base md:text-lg font-medium mb-6 shadow-md cursor-pointer">
+                  <button className="w-full bg-[#CEBB98] hover:bg-black text-white py-3 rounded-md text-base md:text-lg font-medium mb-6 shadow-md cursor-pointer">
                     Place Order
                   </button>
                 </Link>
@@ -1212,11 +1212,11 @@ const Cart = () => {
                   Any Questions?
                   <br />
                   Please call us at{" "}
-                  <a href="tel:18004190066" className="text-purple-700 font-medium">
+                  <a href="tel:18004190066" className="text-yellow-700 font-medium">
                     18004190066
                   </a>{" "}
                   or{" "}
-                  <a href="#" className="text-purple-700 font-medium hover:underline">
+                  <a href="#" className="text-yellow-700 font-medium hover:underline">
                     Chat with us
                   </a>
                 </p>

@@ -17,13 +17,13 @@ const PersonalizedJewelryForm = () => {
             type="text"
             placeholder="Name*"
             required
-            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
+            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-yellow-900 outline-none placeholder-gray-500"
           />
           <input
             type="tel"
             placeholder="Mobile Number*"
             required
-            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
+            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-yellow-900 outline-none placeholder-gray-500"
           />
         </div>
 
@@ -32,13 +32,13 @@ const PersonalizedJewelryForm = () => {
           type="email"
           placeholder="Email Address*"
           required
-          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
+          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-yellow-900 outline-none placeholder-gray-500"
         />
 
         {/* Row 3 */}
         <select
           required
-          className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-500"
+          className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-900 focus:border-yellow-900 text-gray-500"
         >
           <option value="" disabled selected className="text-gray-500">
             Choose Type
@@ -55,7 +55,7 @@ const PersonalizedJewelryForm = () => {
          
           <select
             required
-            className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-500"
+            className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-900 focus:border-yellow-900 text-gray-500"
             defaultValue=""
           >
             <option value="" disabled className="text-gary-500">
@@ -92,13 +92,13 @@ const PersonalizedJewelryForm = () => {
         <textarea
           rows="4"
           placeholder="Please describe your idea for this Custom Project..."
-          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
+          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-yellow-900 outline-none placeholder-gray-500"
         ></textarea>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-purple-900 text-white px-6 py-3 rounded-md shadow hover:bg-purple-800 transition w-full md:w-auto"
+          className="bg-[#CEBB98]  text-white px-6 py-3 rounded-md shadow hover:bg-black transition w-full md:w-auto"
         >
           Submit
         </button>

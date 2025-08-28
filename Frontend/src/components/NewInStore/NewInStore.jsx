@@ -81,7 +81,7 @@ const NewInStore = () => {
   <section className="w-full bg-white py-12 px-4 md:px-12 overflow-hidden">
   {/* Heading */}
   <div className="text-center mb-10">
-    <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
+    <h2 className="text-3xl md:text-4xl font-semibold text-yellow-700">
       NEW IN STORE
     </h2>
   </div>

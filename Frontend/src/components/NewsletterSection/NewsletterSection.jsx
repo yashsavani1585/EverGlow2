@@ -10,7 +10,7 @@ const Newsletter = () => {
 
         {/* Heading */}
         <h2
-          className="text-4xl sm:text-5xl font-serif text-[#CEBB98]"
+          className="text-4xl sm:text-5xl font-serif text-yellow-700"
           style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}
         >
           Subscribe to Our Newsletter
@@ -29,12 +29,12 @@ const Newsletter = () => {
               type="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full px-5 py-3 bg-gray-100 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#CEBB98] focus:border-transparent"
+              className="w-full px-5 py-3 bg-gray-100 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:border-transparent"
             />
           </div>
           <button
             type="submit"
-            className="w-full sm:w-auto bg-[#CEBB98] text-white font-semibold px-8 py-3 rounded-md hover:bg-[#3d153e] transition-colors duration-300"
+            className="w-full sm:w-auto bg-[#CEBB98] text-white font-semibold px-8 py-3 rounded-md hover:bg-black transition-colors duration-300"
           >
             Subscribe
           </button>
@@ -45,7 +45,7 @@ const Newsletter = () => {
           <input
             type="checkbox"
             id="privacy"
-            className="h-4 w-4 text-[#CEBB98] border-gray-300 rounded focus:ring-[#CEBB98]"
+            className="h-4 w-4 text-yellow-700 border-gray-300 rounded focus:ring-yellow-700"
           />
           <label htmlFor="privacy" className="ml-5 text-sm text-gray-600">
             I agree to the Privacy Policy.

@@ -113,7 +113,7 @@
 //                 value={formData.email}
 //                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 //                 className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                   errors.email ? "border-red-500" : "focus:ring-blue-600"
+//                   errors.email ? "border-red-500" : "focus:ring-yellow-900"
 //                 } outline-none`}
 //               />
 //               {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
@@ -129,7 +129,7 @@
 //                 value={formData.mobile}
 //                 onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
 //                 className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                   errors.mobile ? "border-red-500" : "focus:ring-blue-600"
+//                   errors.mobile ? "border-red-500" : "focus:ring-yellow-900"
 //                 } outline-none`}
 //               />
 //               {errors.mobile && <p className="text-xs text-red-500 mt-1">{errors.mobile}</p>}
@@ -146,33 +146,33 @@
 //               value={formData.whatsapp}
 //               onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
 //               placeholder="+91"
-//               className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-600 outline-none"
+//               className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-yellow-900 outline-none"
 //             />
 //           </div>
 
 //   {/* Delivery Type */}
 //   <h3 className="text-lg font-semibold text-gray-800 mb-2">Delivery Type</h3>
 //   <div className="space-y-3 mb-6">
-//     <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-blue-600 transition">
+//     <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-yellow-900 transition">
 //       <input
 //         type="radio"
 //         name="delivery"
 //         value="home"
 //         checked={deliveryType === "home"}
 //         onChange={() => setDeliveryType("home")}
-//         className="mt-1 text-blue-600 focus:ring-blue-600"
+//         className="mt-1 text-yellow-900 focus:ring-yellow-900"
 //       />
 //       <span className="text-gray-700">Home Delivery</span>
 //     </label>
 
-//     <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-blue-600 transition">
+//     <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-yellow-900 transition">
 //       <input
 //         type="radio"
 //         name="delivery"
 //         value="store"
 //         checked={deliveryType === "store"}
 //         onChange={() => setDeliveryType("store")}
-//         className="mt-1 text-blue-600 focus:ring-blue-600"
+//         className="mt-1 text-yellow-900 focus:ring-yellow-900"
 //       />
 //       <span className="text-gray-700">
 //         Pick up from store
@@ -193,7 +193,7 @@
 //               value={formData.name}
 //               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
 //               className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                 errors.name ? "border-red-500" : "focus:ring-blue-600"
+//                 errors.name ? "border-red-500" : "focus:ring-yellow-900"
 //               } outline-none`}
 //             />
 //             {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
@@ -212,7 +212,7 @@
 //                 onChange={(e) =>
 //                   setFormData({ ...formData, recipientMobile: e.target.value })
 //                 }
-//                 className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-600 outline-none"
+//                 className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-yellow-900 outline-none"
 //               />
 //             </div>
 
@@ -226,7 +226,7 @@
 //                 value={formData.pincode}
 //                 onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
 //                 className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                   errors.pincode ? "border-red-500" : "focus:ring-blue-600"
+//                   errors.pincode ? "border-red-500" : "focus:ring-yellow-900"
 //                 } outline-none`}
 //               />
 //               {errors.pincode && <p className="text-xs text-red-500 mt-1">{errors.pincode}</p>}
@@ -242,7 +242,7 @@
 //                 value={formData.address}
 //                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
 //                 className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                   errors.address ? "border-red-500" : "focus:ring-blue-600"
+//                   errors.address ? "border-red-500" : "focus:ring-yellow-900"
 //                 } outline-none`}
 //               />
 //               {errors.address && <p className="text-xs text-red-500 mt-1">{errors.address}</p>}
@@ -258,7 +258,7 @@
 //                 value={formData.street}
 //                 onChange={(e) => setFormData({ ...formData, street: e.target.value })}
 //                 className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                   errors.street ? "border-red-500" : "focus:ring-blue-600"
+//                   errors.street ? "border-red-500" : "focus:ring-yellow-900"
 //                 } outline-none`}
 //               />
 //               {errors.street && <p className="text-xs text-red-500 mt-1">{errors.street}</p>}
@@ -274,7 +274,7 @@
 //                 value={formData.town}
 //                 onChange={(e) => setFormData({ ...formData, town: e.target.value })}
 //                 className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${
-//                   errors.town ? "border-red-500" : "focus:ring-blue-600"
+//                   errors.town ? "border-red-500" : "focus:ring-yellow-900"
 //                 } outline-none`}
 //               />
 //               {errors.town && <p className="text-xs text-red-500 mt-1">{errors.town}</p>}
@@ -289,7 +289,7 @@
 //                 type="text"
 //                 value={formData.landmark}
 //                 onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
-//                 className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-600 outline-none"
+//                 className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-yellow-900 outline-none"
 //               />
 //             </div>
 //           </div>
@@ -303,7 +303,7 @@
 //               type="text"
 //               value={formData.gst}
 //               onChange={(e) => setFormData({ ...formData, gst: e.target.value })}
-//               className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-600 outline-none"
+//               className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-yellow-900 outline-none"
 //             />
 //           </div>
 
@@ -316,7 +316,7 @@
 //                 onChange={(e) =>
 //                   setFormData({ ...formData, billingSame: e.target.checked })
 //                 }
-//                 className="text-blue-600 focus:ring-blue-600"
+//                 className="text-yellow-900 focus:ring-yellow-900"
 //               />
 //               <span className="text-sm text-gray-700">
 //                 Billing address is same as shipping address
@@ -327,7 +327,7 @@
 //           {/* Submit */}
 //           <button
 //             type="submit"
-//             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
+//             className="w-full bg-yellow-900 hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
 //           >
 //             Save & Continue
 //           </button>
@@ -358,7 +358,7 @@
 //               <FaGift className="text-gray-500 mr-2" />
 //               <span>Gift Message (Optional)</span>
 //             </div>
-//             <button className="text-blue-600 font-medium text-sm hover:underline">
+//             <button className="text-yellow-900 font-medium text-sm hover:underline">
 //               Add
 //             </button>
 //           </div>
@@ -377,11 +377,11 @@
 //             Any Questions?
 //             <br />
 //             Please call us at{" "}
-//             <a href="tel:18004190066" className="text-blue-600 font-medium">
+//             <a href="tel:18004190066" className="text-yellow-900 font-medium">
 //               18004190066
 //             </a>{" "}
 //             or{" "}
-//             <a href="#" className="text-blue-600 font-medium hover:underline">
+//             <a href="#" className="text-yellow-900 font-medium hover:underline">
 //               Chat with us
 //             </a>
 //           </p>
@@ -538,7 +538,7 @@
 //                     {step === "address" && (
 //                         <button
 //                             onClick={() => setStep("cart")} // go back to cart/details step
-//                             className="absolute top-4 right-4 flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium"
+//                             className="absolute top-4 right-4 flex items-center gap-1 text-yellow-900 hover:text-blue-800 font-medium"
 //                         >
 //                             <FaPen /> Edit
 //                         </button>
@@ -560,7 +560,7 @@
 //                                         type="email"
 //                                         value={formData.email}
 //                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.email ? "border-red-500" : "focus:ring-blue-600"} outline-none`}
+//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.email ? "border-red-500" : "focus:ring-yellow-900"} outline-none`}
 //                                     />
 //                                     {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
 //                                 </div>
@@ -573,7 +573,7 @@
 //                                         type="text"
 //                                         value={formData.mobile}
 //                                         onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.mobile ? "border-red-500" : "focus:ring-blue-600"} outline-none`}
+//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.mobile ? "border-red-500" : "focus:ring-yellow-900"} outline-none`}
 //                                     />
 //                                     {errors.mobile && <p className="text-xs text-red-500 mt-1">{errors.mobile}</p>}
 //                                 </div>
@@ -588,33 +588,33 @@
 //                                     type="text"
 //                                     value={formData.whatsapp}
 //                                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-//                                     className="w-full border rounded-md px-3 py-2 focus:ring-2 outline-none focus:ring-blue-600"
+//                                     className="w-full border rounded-md px-3 py-2 focus:ring-2 outline-none focus:ring-yellow-900"
 //                                 />
 //                             </div>
 
 //                             {/* Delivery Type */}
 //                             <h3 className="text-lg font-semibold text-gray-800 mb-2">Delivery Type</h3>
 //                             <div className="space-y-3 mb-6">
-//                                 <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-blue-600 transition">
+//                                 <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-yellow-900 transition">
 //                                     <input
 //                                         type="radio"
 //                                         name="delivery"
 //                                         value="home"
 //                                         checked={deliveryType === "home"}
 //                                         onChange={() => setDeliveryType("home")}
-//                                         className="mt-1 text-blue-600 focus:ring-blue-600"
+//                                         className="mt-1 text-yellow-900 focus:ring-yellow-900"
 //                                     />
 //                                     <span className="text-gray-700">Home Delivery</span>
 //                                 </label>
 
-//                                 <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-blue-600 transition">
+//                                 <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-yellow-900 transition">
 //                                     <input
 //                                         type="radio"
 //                                         name="delivery"
 //                                         value="store"
 //                                         checked={deliveryType === "store"}
 //                                         onChange={() => setDeliveryType("store")}
-//                                         className="mt-1 text-blue-600 focus:ring-blue-600"
+//                                         className="mt-1 text-yellow-900 focus:ring-yellow-900"
 //                                     />
 //                                     <span className="text-gray-700">
 //                                         Pick up from store
@@ -634,7 +634,7 @@
 //                                     type="text"
 //                                     value={formData.name}
 //                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-//                                     className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.name ? "border-red-500" : "focus:ring-blue-600"
+//                                     className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.name ? "border-red-500" : "focus:ring-yellow-900"
 //                                         } outline-none`}
 //                                 />
 //                                 {errors.name && (
@@ -654,7 +654,7 @@
 //                                         onChange={(e) =>
 //                                             setFormData({ ...formData, recipientMobile: e.target.value })
 //                                         }
-//                                         className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-600"
+//                                         className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-yellow-900"
 //                                     />
 //                                 </div>
 //                                 <div>
@@ -665,7 +665,7 @@
 //                                         type="text"
 //                                         value={formData.pincode}
 //                                         onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
-//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.pincode ? "border-red-500" : "focus:ring-blue-600"
+//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.pincode ? "border-red-500" : "focus:ring-yellow-900"
 //                                             } outline-none`}
 //                                     />
 //                                     {errors.pincode && (
@@ -684,7 +684,7 @@
 //                                         type="text"
 //                                         value={formData.address}
 //                                         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.address ? "border-red-500" : "focus:ring-blue-600"
+//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.address ? "border-red-500" : "focus:ring-yellow-900"
 //                                             } outline-none`}
 //                                     />
 //                                     {errors.address && (
@@ -699,7 +699,7 @@
 //                                         type="text"
 //                                         value={formData.street}
 //                                         onChange={(e) => setFormData({ ...formData, street: e.target.value })}
-//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.street ? "border-red-500" : "focus:ring-blue-600"
+//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.street ? "border-red-500" : "focus:ring-yellow-900"
 //                                             } outline-none`}
 //                                     />
 //                                     {errors.street && (
@@ -718,7 +718,7 @@
 //                                         type="text"
 //                                         value={formData.town}
 //                                         onChange={(e) => setFormData({ ...formData, town: e.target.value })}
-//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.town ? "border-red-500" : "focus:ring-blue-600"
+//                                         className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.town ? "border-red-500" : "focus:ring-yellow-900"
 //                                             } outline-none`}
 //                                     />
 //                                     {errors.town && (
@@ -734,7 +734,7 @@
 //                                         type="text"
 //                                         value={formData.landmark}
 //                                         onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
-//                                         className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-600"
+//                                         className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-yellow-900"
 //                                     />
 //                                 </div>
 //                             </div>
@@ -748,7 +748,7 @@
 //                                     type="text"
 //                                     value={formData.gst}
 //                                     onChange={(e) => setFormData({ ...formData, gst: e.target.value })}
-//                                     className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-600"
+//                                     className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-yellow-900"
 //                                 />
 //                             </div>
 
@@ -918,13 +918,11 @@ const OrderConfirm = () => {
     };
 
     return (
-        <div className="w-full bg-gray-50 min-h-screen">
+        <div className="w-full bg-white min-h-screen">
             {/* Stepper */}
             <div className="w-full border-t border-[#CEBB98] bg-white">
                 <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-semibold text-gray-800">BLUESTONE</span>
-                    </div>
+
 
                     {/* ✅ Stepper */}
                     <div className="flex items-center gap-6">
@@ -994,11 +992,11 @@ const OrderConfirm = () => {
 
             {/* Main Section */}
             <div className="max-w-6xl mx-auto mt-8 grid grid-cols-1 lg:grid-cols-[2fr_1px_1fr] gap-6 px-4">
-                <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-2xl mx-auto relative">
+                <div className="bg-white  rounded-lg p-6 w-full max-w-2xl mx-auto relative  max-h-[calc(100vh-4rem)] overflow-y-auto pr-2 scrollbar-hide">
                     {step === "address" && (
                         <button
                             onClick={() => setStep("cart")} // go back to cart/details step
-                            className="absolute top-4 right-4 flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium"
+                            className="absolute top-4 right-4 flex items-center gap-1 text-yellow-900 hover:text-blue-800 font-medium"
                         >
                             <FaPen /> Edit
                         </button>
@@ -1019,7 +1017,7 @@ const OrderConfirm = () => {
                                     type="email"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.email ? "border-red-500" : "focus:ring-blue-600"} outline-none`}
+                                    className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.email ? "border-red-500" : "focus:ring-yellow-900"} outline-none`}
                                 />
                                 {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
                             </div>
@@ -1033,11 +1031,14 @@ const OrderConfirm = () => {
                                     type="text"
                                     value={formData.mobile}
                                     onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                                    className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.mobile ? "border-red-500" : "focus:ring-blue-600"} outline-none`}
+                                    className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.mobile ? "border-red-500" : "focus:ring-yellow-900"} outline-none`}
                                 />
                                 {errors.mobile && <p className="text-xs text-red-500 mt-1">{errors.mobile}</p>}
                             </div>
 
+                            <p className="text-sm text-gray-500 mb-4">
+                                who you like to receive notifications on WhatsApp?
+                            </p>
 
                             <div className="mb-4">
                                 <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -1047,33 +1048,37 @@ const OrderConfirm = () => {
                                     type="text"
                                     value={formData.whatsapp}
                                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                                    className="w-full border rounded-md px-3 py-2 focus:ring-2 outline-none focus:ring-blue-600"
+                                    className="w-full border rounded-md px-3 py-2 focus:ring-2 outline-none focus:ring-yellow-900"
                                 />
                             </div>
 
                             {/* Delivery Type */}
                             <h3 className="text-lg font-semibold text-gray-800 mb-2">Delivery Type</h3>
+                            <hr className="mb-4 text-black" />
+                            <p className="text-sm text-gray-500 mb-4">
+                                please choose preferred type of delivery
+                            </p>
                             <div className="space-y-3 mb-6">
-                                <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-blue-600 transition">
+                                <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-yellow-900 transition">
                                     <input
                                         type="radio"
                                         name="delivery"
                                         value="home"
                                         checked={deliveryType === "home"}
                                         onChange={() => setDeliveryType("home")}
-                                        className="mt-1 text-blue-600 focus:ring-blue-600"
+                                        className="mt-1 text-yellow-900 focus:ring-yellow-900"
                                     />
                                     <span className="text-gray-700">Home Delivery</span>
                                 </label>
 
-                                <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-blue-600 transition">
+                                <label className="flex items-start gap-3 cursor-pointer border rounded-md px-4 py-3 hover:border-yellow-900 transition">
                                     <input
                                         type="radio"
                                         name="delivery"
                                         value="store"
                                         checked={deliveryType === "store"}
                                         onChange={() => setDeliveryType("store")}
-                                        className="mt-1 text-blue-600 focus:ring-blue-600"
+                                        className="mt-1 text-yellow-900 focus:ring-yellow-900"
                                     />
                                     <span className="text-gray-700">
                                         Pick up from store
@@ -1085,6 +1090,11 @@ const OrderConfirm = () => {
                             </div>
 
                             {/* Recipient Name */}
+                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Delivery Details</h3>
+                            <hr className="mb-4 text-black" />
+                            <p className="text-sm text-gray-500 mb-4">
+                                we will delivery the order at the below address
+                            </p>
                             <div className="mb-4">
                                 <label className="block text-sm font-medium text-gray-600 mb-1">
                                     Recipient's Name <span className="text-red-500">*</span>
@@ -1093,7 +1103,7 @@ const OrderConfirm = () => {
                                     type="text"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.name ? "border-red-500" : "focus:ring-blue-600"
+                                    className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.name ? "border-red-500" : "focus:ring-yellow-900"
                                         } outline-none`}
                                 />
                                 {errors.name && (
@@ -1113,7 +1123,7 @@ const OrderConfirm = () => {
                                         onChange={(e) =>
                                             setFormData({ ...formData, recipientMobile: e.target.value })
                                         }
-                                        className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-600"
+                                        className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-yellow-900"
                                     />
                                 </div>
                                 <div>
@@ -1124,7 +1134,7 @@ const OrderConfirm = () => {
                                         type="text"
                                         value={formData.pincode}
                                         onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
-                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.pincode ? "border-red-500" : "focus:ring-blue-600"
+                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.pincode ? "border-red-500" : "focus:ring-yellow-900"
                                             } outline-none`}
                                     />
                                     {errors.pincode && (
@@ -1143,7 +1153,7 @@ const OrderConfirm = () => {
                                         type="text"
                                         value={formData.address}
                                         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.address ? "border-red-500" : "focus:ring-blue-600"
+                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.address ? "border-red-500" : "focus:ring-yellow-900"
                                             } outline-none`}
                                     />
                                     {errors.address && (
@@ -1158,7 +1168,7 @@ const OrderConfirm = () => {
                                         type="text"
                                         value={formData.street}
                                         onChange={(e) => setFormData({ ...formData, street: e.target.value })}
-                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.street ? "border-red-500" : "focus:ring-blue-600"
+                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.street ? "border-red-500" : "focus:ring-yellow-900"
                                             } outline-none`}
                                     />
                                     {errors.street && (
@@ -1177,7 +1187,7 @@ const OrderConfirm = () => {
                                         type="text"
                                         value={formData.town}
                                         onChange={(e) => setFormData({ ...formData, town: e.target.value })}
-                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.town ? "border-red-500" : "focus:ring-blue-600"
+                                        className={`w-full border rounded-md px-3 py-2 focus:ring-2 ${errors.town ? "border-red-500" : "focus:ring-yellow-900"
                                             } outline-none`}
                                     />
                                     {errors.town && (
@@ -1193,7 +1203,7 @@ const OrderConfirm = () => {
                                         type="text"
                                         value={formData.landmark}
                                         onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
-                                        className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-600"
+                                        className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-yellow-900"
                                     />
                                 </div>
                             </div>
@@ -1207,7 +1217,7 @@ const OrderConfirm = () => {
                                     type="text"
                                     value={formData.gst}
                                     onChange={(e) => setFormData({ ...formData, gst: e.target.value })}
-                                    className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-600"
+                                    className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-yellow-900"
                                 />
                             </div>
 
@@ -1227,7 +1237,7 @@ const OrderConfirm = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-[#CEBB98] hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
+                                className="w-full bg-[#CEBB98] hover:bg-black text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
                             >
                                 {step === "cart" ? "Save & Continue" : "Confirm Order"}
                             </button>
@@ -1249,61 +1259,63 @@ const OrderConfirm = () => {
                 <div className="w-px bg-gray-300 hidden lg:block"></div>
 
                 {/* Right - Order Summary */}
-                <div className="rounded-lg p-6 h-fit sticky top-6 border shadow-sm">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-4">ORDER SUMMARY</h3>
+                <div className="lg:w-[350px] w-full mt-6 lg:mt-0">
+                    <div className="lg:sticky lg:top-6 rounded-lg p-6 border shadow-sm">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-4">ORDER SUMMARY</h3>
 
-                    <div className="flex justify-between text-sm text-gray-700 mb-2">
-                        <span>Total ({products.length} Items)</span>
-                        <span>₹51,655</span>
-                    </div>
-                    <div className="border-t border-dotted border-gray-400 my-4"></div>
-
-                    <div className="flex justify-between font-medium text-gray-900 mb-2">
-                        <span>Total Payable</span>
-                        <span>₹51,655</span>
-                    </div>
-                    <div className="border-t border-dotted border-gray-400 my-4"></div>
-
-
-                    <p className="text-green-600 text-sm mb-6">You Save ₹2,076</p>
-
-                     <div className="mb-6 flex items-center justify-between border rounded-md px-3 py-2 bg-gray-50">
-                        <div className="flex items-center text-sm text-gray-700">
-                            <FaGift className="text-gray-500 mr-2" />
-                            <span>Gift Message (Optional)</span>
+                        <div className="flex justify-between text-sm text-gray-700 mb-2">
+                            <span>Total ({products.length} Items)</span>
+                            <span>₹51,655</span>
                         </div>
-                        <button className="text-purple-700 font-medium text-sm hover:underline">Add</button>
-                    </div>
+                        <div className="border-t border-dotted border-gray-400 my-4"></div>
 
-                    <button
-                        type="button"
-                        onClick={handlePayment}
-                        disabled={!orderEnabled} // disable until left side form is submitted
-                        className={`w-full py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer 
+                        <div className="flex justify-between font-medium text-gray-900 mb-2">
+                            <span>Total Payable</span>
+                            <span>₹51,655</span>
+                        </div>
+                        <div className="border-t border-dotted border-gray-400 my-4"></div>
+
+
+                        <p className="text-green-600 text-sm mb-6">You Save ₹2,076</p>
+
+                        <div className="mb-6 flex items-center justify-between border rounded-md px-3 py-2 bg-gray-50">
+                            <div className="flex items-center text-sm text-gray-700">
+                                <FaGift className="text-gray-500 mr-2" />
+                                <span>Gift Message (Optional)</span>
+                            </div>
+                            <button className="text-yellow-700 font-medium text-sm hover:underline">Add</button>
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={handlePayment}
+                            disabled={!orderEnabled} // disable until left side form is submitted
+                            className={`w-full py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer 
               ${orderEnabled
-                                ? "bg-[#CEBB98] hover:bg-[#421543] text-white"
-                                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                            }`}
-                    >
-                        Process To Pay
-                    </button>
+                                    ? "bg-[#CEBB98] hover:bg-black text-white"
+                                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                                }`}
+                        >
+                            Process To Pay
+                        </button>
 
-                   <p className="text-sm text-gray-600 mb-6 flex items-center gap-2">
-                        <span className="text-gray-500">⚙</span> Apply Voucher / Gift Card
-                    </p>
+                        <p className="text-sm text-gray-600 mb-6 flex items-center gap-2">
+                            <span className="text-gray-500">⚙</span> Apply Voucher / Gift Card
+                        </p>
 
-                    <p className="text-sm text-gray-600">
-                        Any Questions?
-                        <br />
-                        Please call us at{" "}
-                        <a href="tel:18004190066" className="text-purple-700 font-medium">
-                            18004190066
-                        </a>{" "}
-                        or{" "}
-                        <a href="#" className="text-purple-700 font-medium hover:underline">
-                            Chat with us
-                        </a>
-                    </p>
+                        <p className="text-sm text-gray-600">
+                            Any Questions?
+                            <br />
+                            Please call us at{" "}
+                            <a href="tel:18004190066" className="text-yellow-700 font-medium">
+                                18004190066
+                            </a>{" "}
+                            or{" "}
+                            <a href="#" className="text-yellow-700 font-medium hover:underline">
+                                Chat with us
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1313,10 +1325,10 @@ const OrderConfirm = () => {
 export default OrderConfirm;
 
 
-               
 
-                   
 
-    
+
+
+
 
 

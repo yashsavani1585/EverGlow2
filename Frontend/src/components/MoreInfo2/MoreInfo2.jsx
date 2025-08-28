@@ -879,12 +879,12 @@ const MoreInfo2 = () => {
           <div className="flex flex-col gap-4 w-full">
             <div className="flex flex-col sm:flex-row gap-3 items-center w-full">
               {/* Buy Now */}
-              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition">
                 Buy Now
               </button>
 
               {/* Add to Cart */}
-              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition">
                 Add to Cart
               </button>
 
@@ -905,7 +905,7 @@ const MoreInfo2 = () => {
             </div>
 
             {/* WhatsApp */}
-            <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+            <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition">
               Order on WhatsApp
             </button>
           </div>
@@ -949,18 +949,18 @@ const MoreInfo2 = () => {
           {/* Left */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg shadow p-4">
-              <h3 className="text-lg font-semibold text-purple-900 mb-2">Weight</h3>
+              <h3 className="text-lg font-semibold text-yellow-700 mb-2">Weight</h3>
               <p className="text-sm text-gray-700">Gross (Product) - 1.291</p>
               <p className="text-sm text-gray-700">Net (Gold) - 1.005</p>
             </div>
 
             <div className="bg-white rounded-lg shadow p-4">
-              <h3 className="text-lg font-semibold text-purple-900 mb-2">Purity</h3>
+              <h3 className="text-lg font-semibold text-yellow-700 mb-2">Purity</h3>
               <p className="text-sm text-gray-700">14k Yellow Gold</p>
             </div>
 
             <div className="bg-white rounded-lg shadow p-4 sm:col-span-2">
-              <h3 className="text-lg font-semibold text-purple-900 mb-2">
+              <h3 className="text-lg font-semibold text-yellow-700 mb-2">
                 Diamond and Gemstones
               </h3>
               <p className="text-sm text-gray-700 mb-2">
@@ -991,7 +991,7 @@ const MoreInfo2 = () => {
           <div className="h-full self-stretch">
             <div className="bg-white rounded-lg shadow p-4 h-full flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-purple-900 mb-3">
+                <h3 className="text-lg font-semibold text-yellow-700 mb-3">
                   Price Breakup
                 </h3>
                 <div className="flex justify-between text-sm text-gray-700 mb-1">
