@@ -50,7 +50,7 @@ const Loader = () => (
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-full overflow-x-hidden"> {/* Prevent horizontal scroll */}
       <Suspense fallback={<Loader />}>
         <HeroSection />
       </Suspense>

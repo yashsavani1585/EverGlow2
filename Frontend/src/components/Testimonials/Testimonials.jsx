@@ -664,7 +664,7 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen p-6 sm:p-8 lg:p-12 overflow-hidden bg-[#4C1242] font-['Inter']">
+    <section className="relative flex flex-col items-center justify-center min-h-screen min-w-[99] p-6 sm:p-8 lg:p-12 overflow-hidden overflow-x-hidden bg-[#4C1242] font-['Inter']">
       {/* Grid Lines */}
       <div className="absolute top-[20%] left-0 h-px w-[90%] bg-white hidden sm:block"></div>
       <div className="absolute bottom-[20%] left-25 h-px w-full bg-white hidden sm:block"></div>
