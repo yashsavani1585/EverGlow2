@@ -38,8 +38,8 @@ const HeroSection3 = () => {
       className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[637px] max-w-full mx-auto bg-cover bg-center flex items-center"
       style={{ backgroundImage: `url(${heroSection})` }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
 
       {/* Content */}
       <div className="relative z-10 text-left px-4 sm:px-6 md:px-12 lg:px-24 max-w-[90%]">

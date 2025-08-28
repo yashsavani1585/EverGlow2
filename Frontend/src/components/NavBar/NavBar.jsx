@@ -99,21 +99,31 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { FaChevronDown, FaChevronUp, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ onLinkClick, mobile = false }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
   const dropdownRef = useRef(null);
+  const location = useLocation();
+
+  const handleMouseEnter = () => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsOpen(false);
+    }, 1000); // 3 sec tak open rahe
+    setHoverTimeout(timeout);
+  };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
+    return () => {
+      if (hoverTimeout) clearTimeout(hoverTimeout);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [hoverTimeout]);
 
   return (
     <nav className="w-full text-[#CEBB98] font-medium">
@@ -123,17 +133,27 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
           {/* Home Link */}
           <Link
             to="/"
-            className="hover:text-yellow-700 transition-colors"
+            className={`transition-colors ${location.pathname === "/" ? "text-yellow-900" : "hover:text-yellow-700"
+              }`}
             onClick={onLinkClick}
           >
             Home
           </Link>
 
           {/* Shop by Category Dropdown */}
-          <div className="relative" ref={dropdownRef}>
+          <div
+            className="relative"
+            ref={dropdownRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center space-x-1 hover:text-yellow-700 transition-colors"
+              className={`flex items-center space-x-1 transition-colors ${["/rings", "/earrings", "/bracelet", "/necklace", "/pendantset"].includes(
+                location.pathname
+              )
+                ? "text-yellow-900"
+                : "hover:text-yellow-700"
+                }`}
             >
               <span>Shop by Category</span>
               {isOpen ? (
@@ -154,13 +174,14 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="px-4 py-2 hover:bg-gray-100"
+                      className={`px-4 py-2 hover:bg-gray-100 ${location.pathname === item.path ? "text-yellow-900" : ""
+                        }`}
                     >
                       <Link
                         to={item.path}
                         onClick={() => {
-                          onLinkClick?.();
-                          setIsOpen(false);
+                          onLinkClick?.();   // agar parent ko notify karna hai
+                          setIsOpen(false);  // ✅ dropdown close
                         }}
                       >
                         {item.name}
@@ -168,6 +189,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
                     </li>
                   ))}
                 </ul>
+
               </div>
             )}
           </div>
@@ -175,21 +197,30 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
           {/* Static Links */}
           <Link
             to="/giftstore"
-            className="hover:text-yellow-700transition-colors"
+            className={`transition-colors ${location.pathname === "/giftstore"
+              ? "text-yellow-900"
+              : "hover:text-yellow-700"
+              }`}
             onClick={onLinkClick}
           >
             Gift Store
           </Link>
           <Link
             to="/personalized"
-            className="hover:text-yellow-700 transition-colors"
+            className={`transition-colors ${location.pathname === "/personalized"
+              ? "text-yellow-900"
+              : "hover:text-yellow-700"
+              }`}
             onClick={onLinkClick}
           >
             Personalized Jewelry
           </Link>
           <Link
             to="/collections"
-            className="hover:text-yellow-700 transition-colors"
+            className={`transition-colors ${location.pathname === "/collections"
+              ? "text-yellow-900"
+              : "hover:text-yellow-700"
+              }`}
             onClick={onLinkClick}
           >
             Latest Collections
@@ -197,67 +228,78 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
         </div>
       )}
 
-      {/* Mobile Drawer Navbar */}
+      {/* Mobile Drawer Navbar (unchanged for now) */}
       {mobile && (
         <div className="relative">
-          {/* Close Button */}
           <button
             onClick={onLinkClick}
             className="absolute top-3 right-3 text-gray-600 hover:text-black transition-colors z-30"
           >
             <FaTimes size={22} />
           </button>
-
-          {/* Links */}
           <ul className="pt-12 space-y-5 font-semibold px-4">
-            {/* Home Link */}
             <li>
-              <Link to="/" onClick={onLinkClick} className="hover:text-yellow-700">
+              <Link
+                to="/"
+                onClick={onLinkClick}
+                className={location.pathname === "/" ? "text-yellow-900" : ""}
+              >
                 Home
               </Link>
             </li>
-
-            {/* Shop by Category */}
             <li>
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center justify-between w-full hover:text-yellow-700 transition-colors"
-              >
-                <span>Shop by Category</span>
-                {isOpen ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
-              {isOpen && (
-                <ul className="pl-4 mt-2 space-y-2 text-sm text-gray-700 animate-fadeIn">
-                  {[
-                    { name: "RINGS", path: "/rings" },
-                    { name: "EARRINGS", path: "/earrings" },
-                    { name: "BRACELET", path: "/bracelet" },
-                    { name: "NECKLACE", path: "/necklace" },
-                    { name: "PENDANT SET", path: "/pendantset" },
-                  ].map((item, i) => (
-                    <li key={i}>
-                      <Link to={item.path} onClick={onLinkClick}>
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <span className="font-bold">Shop by Category</span>
+              <ul className="flex flex-col text-yellow-700 font-semibold">
+                {[
+                  { name: "RINGS", path: "/rings" },
+                  { name: "EARRINGS", path: "/earrings" },
+                  { name: "BRACELET", path: "/bracelet" },
+                  { name: "NECKLACE", path: "/necklace" },
+                  { name: "PENDANT SET", path: "/pendantset" },
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className={`px-4 py-2 hover:bg-gray-100 ${location.pathname === item.path ? "text-yellow-900" : ""
+                      }`}
+                  >
+                    <Link
+                      to={item.path}
+                      onClick={() => {
+                        onLinkClick?.();   // agar parent ko notify karna hai
+                        setIsOpen(false);  // ✅ dropdown close
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
             </li>
-
-            {/* Other Links */}
             <li>
-              <Link to="/giftstore" onClick={onLinkClick}>
+              <Link
+                to="/giftstore"
+                onClick={onLinkClick}
+                className={location.pathname === "/giftstore" ? "text-yellow-900" : ""}
+              >
                 Gift Store
               </Link>
             </li>
             <li>
-              <Link to="/personalized" onClick={onLinkClick}>
+              <Link
+                to="/personalized"
+                onClick={onLinkClick}
+                className={location.pathname === "/personalized" ? "text-yellow-900" : ""}
+              >
                 Personalized Jewelry
               </Link>
             </li>
             <li>
-              <Link to="/collections" onClick={onLinkClick}>
+              <Link
+                to="/collections"
+                onClick={onLinkClick}
+                className={location.pathname === "/collections" ? "text-yellow-900" : ""}
+              >
                 Latest Collections
               </Link>
             </li>

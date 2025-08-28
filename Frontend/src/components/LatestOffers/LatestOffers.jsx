@@ -21,7 +21,7 @@ const LatestOffers = () => {
           <img
             src={mainImage}
             alt="New Jewelry Collection"
-            className="w-full h-[500px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+            className="w-full h-[513px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
           />
         </div>
 
@@ -33,7 +33,7 @@ const LatestOffers = () => {
             <img
               src={elegantRing}
               alt="Elegant Jewellery"
-              className="w-full h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+              className="w-full h-[240px] object-fill rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
             />
           </div>
 
@@ -42,7 +42,7 @@ const LatestOffers = () => {
             <img
               src={diamondRing}
               alt="Diamond Rings"
-              className="w-full h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+              className="w-full h-[240px] object-fill rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
             />
           </div>
         </div>

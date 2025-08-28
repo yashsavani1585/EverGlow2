@@ -9,8 +9,7 @@ import {
   InputAdornment,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import loginImg from "../../assets/LoginImg.png";
-import registerImg from "../../assets/RegisterImg.png";
+import AuthLR from "../../assets/Auth.png";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -25,7 +24,7 @@ const Auth = () => {
         {/* Left Image */}
         <div className="w-full md:w-1/2 h-52 md:h-auto">
           <img
-            src={isLogin ? loginImg : registerImg}
+            src={isLogin ? AuthLR : AuthLR}
             alt="Auth"
             className="w-full h-full object-cover"
           />
