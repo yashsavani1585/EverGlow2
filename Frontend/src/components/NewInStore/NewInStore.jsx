@@ -78,65 +78,54 @@ const products = [
 
 const NewInStore = () => {
   return (
-    <section className="w-full bg-white py-12 px-4 md:px-12">
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[#4f1c51]">
-          NEW IN STORE
-        </h2>
-      </div>
+  <section className="w-full bg-white py-12 px-4 md:px-12 overflow-hidden">
+  {/* Heading */}
+  <div className="text-center mb-10">
+    <h2 className="text-3xl md:text-4xl font-semibold text-[#4f1c51]">
+      NEW IN STORE
+    </h2>
+  </div>
 
-      {/* Slider */}
-      <div className="max-w-7xl mx-auto">
-        <Swiper
-          modules={[Autoplay]}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          speed={1200}
-          // slidesPerView={3} // ✅ ek time me sirf 3 image
-          spaceBetween={24}
-          breakpoints={{
-            // ✅ mobile (0px and up)
-            0: {
-              slidesPerView: 1,
-            },
-            // ✅ tablets (640px and up)
-            640: {
-              slidesPerView: 2,
-            },
-            // ✅ laptops (1024px and up)
-            1024: {
-              slidesPerView: 3,
-            },
-            // ✅ big screens (1280px and up)
-            1280: {
-              slidesPerView: 3,
-            },
-          }}
-          className="w-full"
-        >
-          {products.map((item, i) => (
-            <SwiperSlide key={item.id}>
-              <div
-                className={`${i % 2 === 0
-                    ? "h-[280px] sm:h-[250px] md:h-[340px] lg:h-[360px]  mt-15" // choti
-                    : "h-[380px] md:h-[460px] lg:h-[500px]" // badi
-                  }`}
-              >
-                <img
-                  src={item.img}
-                  alt={item.alt}
-                  className="w-full h-full object-cover rounded-lg shadow-md"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+  {/* Slider */}
+  <div className="max-w-7xl mx-auto overflow-hidden">
+    <Swiper
+      modules={[Autoplay]}
+      loop={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      speed={1200}
+      spaceBetween={24}
+      breakpoints={{
+        0: { slidesPerView: 1 },
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+        1280: { slidesPerView: 3 },
+      }}
+      className="w-full"
+    >
+      {products.map((item, i) => (
+        <SwiperSlide key={item.id}>
+          <div
+            className={`${
+              i % 2 === 0
+                ? "h-[280px] sm:h-[250px] md:h-[340px] lg:h-[360px] mt-16" // ✅ fixed (mt-16)
+                : "h-[380px] md:h-[460px] lg:h-[500px]"
+            }`}
+          >
+            <img
+              src={item.img}
+              alt={item.alt}
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</section>
+
   );
 };
 
