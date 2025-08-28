@@ -50,7 +50,7 @@
 //   return (
 //     <div className="w-full bg-gray-50 min-h-screen">
 //       {/* Stepper */}
-//       <div className="w-full border-t border-[#4F1c51] bg-white">
+//       <div className="w-full border-t border-[#CEBB98] bg-white">
 //         <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
 //           <div className="flex items-center gap-2">
 //             <span className="text-xl font-semibold text-gray-800">BLUESTONE</span>
@@ -364,7 +364,7 @@
 //           </div>
 
 //           <Link to="/orderConfirmation">
-//             <button className="w-full bg-[#4F1c51] hover:bg-[#421543] text-white py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer">
+//             <button className="w-full bg-[#CEBB98] hover:bg-[#421543] text-white py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer">
 //               Place Order
 //             </button>
 //           </Link>
@@ -458,7 +458,7 @@
 //     return (
 //         <div className="w-full bg-gray-50 min-h-screen">
 //             {/* Stepper */}
-//             <div className="w-full border-t border-[#4F1c51] bg-white">
+//             <div className="w-full border-t border-[#CEBB98] bg-white">
 //                 <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
 //                     <div className="flex items-center gap-2">
 //                         <span className="text-xl font-semibold text-gray-800">BLUESTONE</span>
@@ -766,7 +766,7 @@
 
 //                             <button
 //                                 type="submit"
-//                                 className="w-full bg-[#4F1c51] hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
+//                                 className="w-full bg-[#CEBB98] hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
 //                             >
 //                                 {step === "cart" ? "Save & Continue" : "Confirm Order"}
 //                             </button>
@@ -816,7 +816,7 @@
 //     <button
 //         type="button" // important so it doesn't submit the form automatically
 //         onClick={handlePayment} // call your payment function
-//         className="w-full bg-[#4F1c51] hover:bg-[#421543] text-white py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer"
+//         className="w-full bg-[#CEBB98] hover:bg-[#421543] text-white py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer"
 //     >
 //         Place Order
 //     </button>
@@ -920,7 +920,7 @@ const OrderConfirm = () => {
     return (
         <div className="w-full bg-gray-50 min-h-screen">
             {/* Stepper */}
-            <div className="w-full border-t border-[#4F1c51] bg-white">
+            <div className="w-full border-t border-[#CEBB98] bg-white">
                 <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
                     <div className="flex items-center gap-2">
                         <span className="text-xl font-semibold text-gray-800">BLUESTONE</span>
@@ -1227,7 +1227,7 @@ const OrderConfirm = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-[#4F1c51] hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
+                                className="w-full bg-[#CEBB98] hover:bg-blue-700 text-white py-3 rounded-md text-lg font-medium shadow-md cursor-pointer"
                             >
                                 {step === "cart" ? "Save & Continue" : "Confirm Order"}
                             </button>
@@ -1281,7 +1281,7 @@ const OrderConfirm = () => {
                         disabled={!orderEnabled} // disable until left side form is submitted
                         className={`w-full py-3 rounded-md text-lg font-medium mb-6 shadow-md cursor-pointer 
               ${orderEnabled
-                                ? "bg-[#4F1c51] hover:bg-[#421543] text-white"
+                                ? "bg-[#CEBB98] hover:bg-[#421543] text-white"
                                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
                             }`}
                     >

@@ -23,7 +23,7 @@
 
 //         {/* Price Row */}
 //         <div className="flex justify-between items-center mb-3">
-//           <span className="text-lg font-semibold text-purple-700">
+//           <span className="text-lg font-semibold text-[#CEBB98]">
 //             {product.price}
 //           </span>
 //           {product.oldPrice && (
@@ -37,13 +37,13 @@
 //         <div className="mt-auto flex gap-2">
 //           {/* More Info Button */}
 //           <Link to="/moreInform" className="flex-1">
-//             <button className="w-full border border-[#4f1c51] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
+//             <button className="w-full border border-[#CEBB98] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
 //               More Info
 //             </button>
 //           </Link>
 
 //           {/* Add to Cart Button */}
-//           <button className="flex-1 bg-[#4f1c51] border border-purple-700 text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
+//           <button className="flex-1 bg-[#CEBB98] border border-[#CEBB98] text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
 //             Add to Cart
 //           </button>
 //         </div>
@@ -96,7 +96,7 @@
 
 //         {/* Price Row */}
 //         <div className="flex justify-between items-center mb-3">
-//           <span className="text-lg font-semibold text-purple-700">
+//           <span className="text-lg font-semibold text-[#CEBB98]">
 //             {product.price}
 //           </span>
 //           {product.oldPrice && (
@@ -110,13 +110,13 @@
 //         <div className="mt-auto flex gap-2">
 //           {/* More Info Button */}
 //           <Link to="/moreInform" className="flex-1">
-//             <button className="w-full border border-[#4f1c51] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
+//             <button className="w-full border border-[#CEBB98] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
 //               More Info
 //             </button>
 //           </Link>
 
 //           {/* Add to Cart Button */}
-//           <button className="flex-1 bg-[#4f1c51] border border-purple-700 text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
+//           <button className="flex-1 bg-[#CEBB98] border border-[#CEBB98] text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
 //             Add to Cart
 //           </button>
 //         </div>
@@ -175,7 +175,7 @@
 
 //         {/* Price Row */}
 //         <div className="flex justify-between items-center mb-3">
-//           <span className="text-lg font-semibold text-purple-700">
+//           <span className="text-lg font-semibold text-[#CEBB98]">
 //             {product.price}
 //           </span>
 //           {product.oldPrice && (
@@ -189,13 +189,13 @@
 //         <div className="mt-auto flex gap-2">
 //           {/* More Info Button */}
 //           <Link to="/moreInform" className="flex-1">
-//             <button className="w-full border border-[#4f1c51] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
+//             <button className="w-full border border-[#CEBB98] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
 //               More Info
 //             </button>
 //           </Link>
 
 //           {/* Add to Cart Button */}
-//           <button className="flex-1 bg-[#4f1c51] border border-purple-700 text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
+//           <button className="flex-1 bg-[#CEBB98] border border-[#CEBB98] text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
 //             Add to Cart
 //           </button>
 //         </div>
@@ -257,7 +257,7 @@ const ProductCard = ({ product, imageH = "h-[150px] md:h-[200px]" }) => {
 
         {/* Price Row */}
         <div className="flex justify-between items-center mb-3">
-          <span className="text-lg font-semibold text-purple-700">
+          <span className="text-lg font-semibold text-[#CEBB98]">
             {product.price}
           </span>
           {product.oldPrice && (
@@ -271,13 +271,13 @@ const ProductCard = ({ product, imageH = "h-[150px] md:h-[200px]" }) => {
         <div className="mt-auto flex gap-2">
           {/* More Info Button */}
           <Link to="/moreinfo2" className="flex-1">
-            <button className="w-full border border-[#4f1c51] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
+            <button className="w-full border border-[#CEBB98] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
               More Info
             </button>
           </Link>
 
           {/* Add to Cart Button */}
-          <button className="flex-1 bg-[#4f1c51] border border-purple-700 text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-800 transition">
+          <button className="flex-1 bg-[#CEBB98] border border-[#CEBB98] text-white text-sm font-medium py-2 px-3 rounded-xl hover:bg-[#CEBB98] transition">
             Add to Cart
           </button>
         </div>

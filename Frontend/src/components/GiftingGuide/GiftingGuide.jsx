@@ -12,10 +12,10 @@
 //         <section className="w-full bg-white py-12 px-4 md:px-12">
 //             {/* Heading */}
 //             <div className="text-center mb-10">
-//                 <h2 className="text-3xl md:text-4xl font-semibold text-purple-900">
+//                 <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
 //                     GIFTING GUIDE
 //                 </h2>
-//                 <p className="text-lg md:text-xl text-purple-600 font-medium mt-2">
+//                 <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
 //                     gifts for your loved one
 //                 </p>
 //             </div>
@@ -35,7 +35,7 @@
 //                         />
 
 //                         {/* Gradient Overlay */}
-//                         <div className="absolute inset-0 bg-[#4f1c51]/70 flex items-center justify-center">
+//                         <div className="absolute inset-0 bg-[#CEBB98]/70 flex items-center justify-center">
 //                             <h3 className="text-3xl md:text-4xl font-bold text-white text-center drop-shadow-lg">
 //                                 {gift.title}
 //                             </h3>
@@ -64,10 +64,10 @@ const GiftingGuide = () => {
         <section className="w-full bg-white py-12 px-4 md:px-12">
             {/* Heading */}
             <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-semibold text-purple-900">
+                <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
                     GIFTING GUIDE
                 </h2>
-                <p className="text-lg md:text-xl text-purple-600 font-medium mt-2">
+                <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
                     gifts for your loved one
                 </p>
             </div>
@@ -87,7 +87,7 @@ const GiftingGuide = () => {
                         />
 
                         {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-[#4f1c51]/70 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-[#CEBB98]/70 flex items-center justify-center">
                             <h3 className="text-xl sm:text-2xl md:text-4xl font-bold text-white text-center drop-shadow-lg">
                                 {gift.title}
                             </h3>

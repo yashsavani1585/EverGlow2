@@ -3,7 +3,7 @@
 
 // const HeroSection2 = () => {
 //   return (
-//     <section className="w-full h-[630px] bg-gradient-to-r from-[#4f1c51] via-[#732d75] to-[#a04da3] flex items-center justify-between px-16">
+//     <section className="w-full h-[630px] bg-gradient-to-r from-[#CEBB98] via-[#732d75] to-[#a04da3] flex items-center justify-between px-16">
 //       {/* Left Side - Image */}
 //       <div className="flex-1 flex justify-center">
 //         <img

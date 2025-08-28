@@ -37,7 +37,7 @@
 //                 onClick={() => setIsLogin(true)}
 //                 className={`pb-2 text-lg font-semibold ${
 //                   isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                 }`}
 //               >
@@ -47,7 +47,7 @@
 //                 onClick={() => setIsLogin(false)}
 //                 className={`pb-2 text-lg font-semibold ${
 //                   !isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                 }`}
 //               >
@@ -80,12 +80,12 @@
 //                 />
 //                 <div className="flex items-center justify-between">
 //                   <FormControlLabel control={<Checkbox />} label="Remember me" />
-//                   <span className="text-sm text-gray-700 cursor-pointer hover:text-[#4F1c51]">
+//                   <span className="text-sm text-gray-700 cursor-pointer hover:text-[#CEBB98]">
 //                     Forgot Password
 //                   </span>
 //                 </div>
 //                 <p className="text-xs text-gray-500 text-center">
-//                   By Continuing, I agree to <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> & <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                   By Continuing, I agree to <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> & <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                 </p>
 //                 <Button
 //                   variant="contained"
@@ -123,7 +123,7 @@
 //                 <p className="text-center text-sm mt-4">
 //                   Already have an Account?{" "}
 //                   <span
-//                     className="text-[#4F1c51] font-semibold cursor-pointer"
+//                     className="text-[#CEBB98] font-semibold cursor-pointer"
 //                     onClick={toggleAuth}
 //                   >
 //                     Create Account
@@ -166,7 +166,7 @@
 //                   size="small"
 //                 />
 //                 <p className="text-xs text-gray-500 text-center">
-//                   By Continuing, I agree to <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> & <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                   By Continuing, I agree to <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> & <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                 </p>
 //                 <Button
 //                   variant="contained"
@@ -189,7 +189,7 @@
 //                 <p className="text-center text-sm mt-4">
 //                   Already have an account?{" "}
 //                   <span
-//                     className="text-[#4F1c51] font-semibold cursor-pointer"
+//                     className="text-[#CEBB98] font-semibold cursor-pointer"
 //                     onClick={toggleAuth}
 //                   >
 //                     Sign in
@@ -247,7 +247,7 @@
 //               <button
 //                 onClick={() => setIsLogin(true)}
 //                 className={`pb-2 text-lg font-semibold ${isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                   }`}
 //               >
@@ -256,7 +256,7 @@
 //               <button
 //                 onClick={() => setIsLogin(false)}
 //                 className={`pb-2 text-lg font-semibold ${!isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                   }`}
 //               >
@@ -294,12 +294,12 @@
 
 //                   <div className="flex items-center justify-between">
 //                     <FormControlLabel control={<Checkbox />} label="Remember me" />
-//                     <span className="text-sm text-gray-700 cursor-pointer hover:text-[#4F1c51]">
+//                     <span className="text-sm text-gray-700 cursor-pointer hover:text-[#CEBB98]">
 //                       Forgot Password
 //                     </span>
 //                   </div>
 //                   <p className="text-xs text-gray-500 text-center">
-//                     By Continuing, I agree to <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> & <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                     By Continuing, I agree to <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> & <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                   </p>
 //                   <Button
 //                     variant="contained"
@@ -337,7 +337,7 @@
 //                   <p className="text-center text-sm mt-4">
 //                     Don’t have an Account?{" "}
 //                     <span
-//                       className="text-[#4F1c51] font-semibold cursor-pointer"
+//                       className="text-[#CEBB98] font-semibold cursor-pointer"
 //                       onClick={toggleAuth}
 //                     >
 //                       Create Account
@@ -382,7 +382,7 @@
 //                      sx={{ mt: 2 }}
 //                   />
 //                   <p className="text-xs text-gray-500 text-center mt-4">
-//                     By Continuing, I agree to <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> & <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                     By Continuing, I agree to <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> & <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                   </p>
 //                   <Button
 //                     variant="contained"
@@ -405,7 +405,7 @@
 //                   <p className="text-center text-sm mt-4">
 //                     Already have an account?{" "}
 //                     <span
-//                       className="text-[#4F1c51] font-semibold cursor-pointer"
+//                       className="text-[#CEBB98] font-semibold cursor-pointer"
 //                       onClick={toggleAuth}
 //                     >
 //                       Sign in
@@ -465,7 +465,7 @@
 //                 onClick={() => setIsLogin(true)}
 //                 className={`pb-2 text-lg font-semibold ${
 //                   isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                 }`}
 //               >
@@ -475,7 +475,7 @@
 //                 onClick={() => setIsLogin(false)}
 //                 className={`pb-2 text-lg font-semibold ${
 //                   !isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                 }`}
 //               >
@@ -512,15 +512,15 @@
 
 //                   <div className="flex items-center justify-between">
 //                     <FormControlLabel control={<Checkbox />} label="Remember me" />
-//                     <span className="text-sm text-gray-700 cursor-pointer hover:text-[#4F1c51]">
+//                     <span className="text-sm text-gray-700 cursor-pointer hover:text-[#CEBB98]">
 //                       Forgot Password
 //                     </span>
 //                   </div>
 
 //                   <p className="text-xs text-gray-500 text-center">
 //                     By Continuing, I agree to{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> &{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                     <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> &{" "}
+//                     <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                   </p>
 
 //                   <Button
@@ -559,7 +559,7 @@
 //                   <p className="text-center text-sm mt-4">
 //                     Don’t have an Account?{" "}
 //                     <span
-//                       className="text-[#4F1c51] font-semibold cursor-pointer"
+//                       className="text-[#CEBB98] font-semibold cursor-pointer"
 //                       onClick={toggleAuth}
 //                     >
 //                       Create Account
@@ -617,8 +617,8 @@
 
 //                   <p className="text-xs text-gray-500 text-center mt-4">
 //                     By Continuing, I agree to{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> &{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                     <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> &{" "}
+//                     <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                   </p>
 
 //                   <Button
@@ -642,7 +642,7 @@
 //                   <p className="text-center text-sm mt-4">
 //                     Already have an account?{" "}
 //                     <span
-//                       className="text-[#4F1c51] font-semibold cursor-pointer"
+//                       className="text-[#CEBB98] font-semibold cursor-pointer"
 //                       onClick={toggleAuth}
 //                     >
 //                       Sign in
@@ -702,7 +702,7 @@
 //                 onClick={() => setIsLogin(true)}
 //                 className={`pb-2 text-lg font-semibold ${
 //                   isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                 }`}
 //               >
@@ -712,7 +712,7 @@
 //                 onClick={() => setIsLogin(false)}
 //                 className={`pb-2 text-lg font-semibold ${
 //                   !isLogin
-//                     ? "border-b-2 border-purple-700 text-[#4F1c51]"
+//                     ? "border-b-2 border-purple-700 text-[#CEBB98]"
 //                     : "text-gray-500"
 //                 }`}
 //               >
@@ -749,15 +749,15 @@
 
 //                   <div className="flex items-center justify-between flex-wrap">
 //                     <FormControlLabel control={<Checkbox />} label="Remember me" />
-//                     <span className="text-sm text-gray-700 cursor-pointer hover:text-[#4F1c51]">
+//                     <span className="text-sm text-gray-700 cursor-pointer hover:text-[#CEBB98]">
 //                       Forgot Password
 //                     </span>
 //                   </div>
 
 //                   <p className="text-xs text-gray-500 text-center">
 //                     By Continuing, I agree to{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> &{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                     <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> &{" "}
+//                     <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                   </p>
 
 //                   <Button
@@ -796,7 +796,7 @@
 //                   <p className="text-center text-sm mt-4">
 //                     Don’t have an Account?{" "}
 //                     <span
-//                       className="text-[#4F1c51] font-semibold cursor-pointer"
+//                       className="text-[#CEBB98] font-semibold cursor-pointer"
 //                       onClick={toggleAuth}
 //                     >
 //                       Create Account
@@ -854,8 +854,8 @@
 
 //                   <p className="text-xs text-gray-500 text-center mt-4">
 //                     By Continuing, I agree to{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> &{" "}
-//                     <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+//                     <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> &{" "}
+//                     <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
 //                   </p>
 
 //                   <Button
@@ -879,7 +879,7 @@
 //                   <p className="text-center text-sm mt-4">
 //                     Already have an account?{" "}
 //                     <span
-//                       className="text-[#4F1c51] font-semibold cursor-pointer"
+//                       className="text-[#CEBB98] font-semibold cursor-pointer"
 //                       onClick={toggleAuth}
 //                     >
 //                       Sign in
@@ -939,7 +939,7 @@ const Auth = () => {
                 onClick={() => setIsLogin(true)}
                 className={`text-lg font-semibold cursor-pointer ${
                   isLogin
-                    ? "border-b-2 border-purple-700 text-[#4F1c51]"
+                    ? "border-b-2 border-purple-700 text-[#CEBB98]"
                     : "text-gray-500"
                 }`}
               >
@@ -949,7 +949,7 @@ const Auth = () => {
                 onClick={() => setIsLogin(false)}
                 className={`text-lg font-semibold cursor-pointer ${
                   !isLogin
-                    ? "border-b-2 border-purple-700 text-[#4F1c51]"
+                    ? "border-b-2 border-purple-700 text-[#CEBB98]"
                     : "text-gray-500"
                 }`}
               >
@@ -989,15 +989,15 @@ const Auth = () => {
 
                   <div className="flex items-center justify-between flex-wrap">
                     <FormControlLabel control={<Checkbox />} label="Remember me" />
-                    <span className="text-sm text-gray-700 cursor-pointer hover:text-[#4F1c51]">
+                    <span className="text-sm text-gray-700 cursor-pointer hover:text-[#CEBB98]">
                       Forgot Password
                     </span>
                   </div>
 
                   <p className="text-xs text-gray-500 text-center">
                     By Continuing, I agree to{" "}
-                    <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> &{" "}
-                    <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+                    <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> &{" "}
+                    <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
                   </p>
 
                   <Button
@@ -1036,7 +1036,7 @@ const Auth = () => {
                   <p className="text-center text-sm mt-2">
                     Don’t have an Account?{" "}
                     <span
-                      className="text-[#4F1c51] font-semibold cursor-pointer"
+                      className="text-[#CEBB98] font-semibold cursor-pointer"
                       onClick={toggleAuth}
                     >
                       Create Account
@@ -1096,8 +1096,8 @@ const Auth = () => {
 
                   <p className="text-xs text-gray-500 text-center mt-2">
                     By Continuing, I agree to{" "}
-                    <span className="text-[#4F1c51] cursor-pointer">Terms of Use</span> &{" "}
-                    <span className="text-[#4F1c51] cursor-pointer">Privacy Policy</span>.
+                    <span className="text-[#CEBB98] cursor-pointer">Terms of Use</span> &{" "}
+                    <span className="text-[#CEBB98] cursor-pointer">Privacy Policy</span>.
                   </p>
 
                   <Button
@@ -1136,7 +1136,7 @@ const Auth = () => {
                   <p className="text-center text-sm mt-2">
                     Already have an account?{" "}
                     <span
-                      className="text-[#4F1c51] font-semibold cursor-pointer"
+                      className="text-[#CEBB98] font-semibold cursor-pointer"
                       onClick={toggleAuth}
                     >
                       Sign in

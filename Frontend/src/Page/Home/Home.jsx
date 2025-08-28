@@ -22,7 +22,7 @@
 //             <EverglowPromise />
 //             <CollectionSection />
 //             <Newsletter />
- 
+
 //         </div>
 //     )
 // }
@@ -79,9 +79,12 @@ const Home = () => {
         <EverglowPromise />
       </Suspense>
 
-      <Suspense fallback={<Loader />}>
-        <CollectionSection />
-      </Suspense>
+      <div className="hidden md:block">
+        <Suspense fallback={<Loader />}>
+          <CollectionSection />
+        </Suspense>
+      </div>
+
 
       <Suspense fallback={<Loader />}>
         <Newsletter />

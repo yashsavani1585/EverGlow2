@@ -26,7 +26,7 @@
 //   };
 
 //   return (
-//     <nav className="max-w-6xl mx-auto flex justify-center space-x-12 mt-0 text-[#4f1c51] font-medium h-16 items-center relative">
+//     <nav className="max-w-6xl mx-auto flex justify-center space-x-12 mt-0 text-[#CEBB98] font-medium h-16 items-center relative">
 //       {/* Shop by Category with Dropdown */}
 //       <div className="relative" ref={dropdownRef}>
 //         <button
@@ -44,7 +44,7 @@
 //         {/* Dropdown */}
 //         {isOpen && (
 //           <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg border rounded-md z-20">
-//             <ul className="flex flex-col text-[#4f1c51] font-semibold">
+//             <ul className="flex flex-col text-[#CEBB98] font-semibold">
 //               <li
 //                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
 //                 onClick={handleMenuClick}
@@ -116,7 +116,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
   }, []);
 
   return (
-    <nav className="w-full text-[#4f1c51] font-medium">
+    <nav className="w-full text-[#CEBB98] font-medium">
       {/* Desktop Navbar */}
       {!mobile && (
         <div className="flex justify-center items-center space-x-12 p-4 md:px-10">
@@ -144,7 +144,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
             </button>
             {isOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg border rounded-md z-20 animate-fadeIn">
-                <ul className="flex flex-col text-[#4f1c51] font-semibold">
+                <ul className="flex flex-col text-[#CEBB98] font-semibold">
                   {[
                     { name: "RINGS", path: "/rings" },
                     { name: "EARRINGS", path: "/earrings" },

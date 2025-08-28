@@ -957,12 +957,33 @@ const JewelryShowcase = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             {/* Left */}
             <div className="flex flex-col gap-10">
-              <img src={new1} alt="Jewelry" className="w-full h-auto object-cover shadow-lg rounded-xl" />
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                <DiscoverBlock title="Jewelry Tells" subtitle="A Great Story" buttonText="Discover more" />
-                <img src={new3} alt="Bracelet" className="w-full sm:w-1/2 object-cover shadow-lg rounded-xl" />
+              {/* Top Image */}
+              <img
+                src={new1}
+                alt="Jewelry"
+                className="w-full h-auto object-cover shadow-lg rounded-xl"
+              />
+
+              {/* Bottom Section: DiscoverBlock + Image */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-10">
+                {/* Discover Block */}
+                <div className="flex-1 w-full">
+                  <DiscoverBlock
+                    title="Jewelry Tells"
+                    subtitle="A Great Story"
+                    buttonText="Discover more"
+                  />
+                </div>
+
+                {/* Image */}
+                <img
+                  src={new3}
+                  alt="Bracelet"
+                  className="w-full sm:w-1/2 h-auto object-cover shadow-lg rounded-xl"
+                />
               </div>
             </div>
+
 
             {/* Right */}
             <div className="flex flex-col gap-10">

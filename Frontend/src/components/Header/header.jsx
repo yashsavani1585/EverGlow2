@@ -49,23 +49,23 @@
 
 //         {/* Search Bar (Desktop Only) */}
 //         <div className="hidden md:flex flex-1 justify-center px-4">
-//           <div className="flex items-center w-full max-w-xl border border-[#4f1c51] rounded-lg h-12 px-4">
+//           <div className="flex items-center w-full max-w-xl border border-[#CEBB98] rounded-lg h-12 px-4">
 //             <input
 //               type="text"
 //               placeholder="Search..."
-//               className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51] text-base"
+//               className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98] text-base"
 //             />
-//             <button className="text-[#4f1c51]">
+//             <button className="text-[#CEBB98]">
 //               <FaCamera />
 //             </button>
-//             <button className="ml-2 text-[#4f1c51]">
+//             <button className="ml-2 text-[#CEBB98]">
 //               <FaSearch />
 //             </button>
 //           </div>
 //         </div>
 
 //         {/* Action Icons */}
-//         <div className="flex items-center space-x-5 text-[#4f1c51]">
+//         <div className="flex items-center space-x-5 text-[#CEBB98]">
 //           {/* Mobile Search Icon */}
 //           <button
 //             onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
@@ -107,7 +107,7 @@
 //                 </p>
 //                 <ul className="space-y-3 text-gray-700">
 //                   <Link to="/profile" onClick={handleLinkClick}>
-//                     <li className="flex items-center gap-2 hover:text-[#4f1c51]">
+//                     <li className="flex items-center gap-2 hover:text-[#CEBB98]">
 //                       <img
 //                         src={ProfileImg}
 //                         alt="Profile"
@@ -117,7 +117,7 @@
 //                     </li>
 //                   </Link>
 //                   <Link to="/MyOrder" onClick={handleLinkClick}>
-//                     <li className="flex items-center gap-2 hover:text-[#4f1c51]">
+//                     <li className="flex items-center gap-2 hover:text-[#CEBB98]">
 //                       <img
 //                         src={OrdersImg}
 //                         alt="Orders"
@@ -127,7 +127,7 @@
 //                     </li>
 //                   </Link>
 //                   <Link to="/terms" onClick={handleLinkClick}>
-//                     <li className="flex items-center gap-2 hover:text-[#4f1c51]">
+//                     <li className="flex items-center gap-2 hover:text-[#CEBB98]">
 //                       <img
 //                         src={TermsImg}
 //                         alt="Terms"
@@ -137,7 +137,7 @@
 //                     </li>
 //                   </Link>
 //                   <Link to="/privacy" onClick={handleLinkClick}>
-//                     <li className="flex items-center gap-2 hover:text-[#4f1c51]">
+//                     <li className="flex items-center gap-2 hover:text-[#CEBB98]">
 //                       <img
 //                         src={PrivacyImg}
 //                         alt="Privacy"
@@ -147,7 +147,7 @@
 //                     </li>
 //                   </Link>
 //                   <Link to="/contact" onClick={handleLinkClick}>
-//                     <li className="flex items-center gap-2 hover:text-[#4f1c51]">
+//                     <li className="flex items-center gap-2 hover:text-[#CEBB98]">
 //                       <img
 //                         src={ContactImg}
 //                         alt="Contact"
@@ -176,16 +176,16 @@
 //       {/* Mobile Search Box (Open When Clicked) */}
 //       {mobileSearchOpen && (
 //         <div className="px-3 pb-3 md:hidden">
-//           <div className="flex items-center w-full border border-[#4f1c51] rounded-lg h-12 px-4">
+//           <div className="flex items-center w-full border border-[#CEBB98] rounded-lg h-12 px-4">
 //             <input
 //               type="text"
 //               placeholder="Search..."
-//               className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51] text-base"
+//               className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98] text-base"
 //             />
-//             <button className="text-[#4f1c51]">
+//             <button className="text-[#CEBB98]">
 //               <FaCamera />
 //             </button>
-//             <button className="ml-2 text-[#4f1c51]">
+//             <button className="ml-2 text-[#CEBB98]">
 //               <FaSearch />
 //             </button>
 //           </div>
@@ -243,7 +243,7 @@
 //         {/* Left Side: Mobile Menu + Logo */}
 //         <div className="flex items-center space-x-3">
 //           <button
-//             className="md:hidden text-2xl text-[#4f1c51]"
+//             className="md:hidden text-2xl text-[#CEBB98]"
 //             onClick={() => setDrawerOpen(true)}
 //           >
 //             <FaBars />
@@ -256,23 +256,23 @@
 
 //         {/* Search (Desktop Only) */}
 //         <div className="hidden md:flex flex-1 justify-center px-4">
-//           <div className="flex items-center w-full max-w-xl border border-[#4f1c51] rounded-lg h-12 px-4">
+//           <div className="flex items-center w-full max-w-xl border border-[#CEBB98] rounded-lg h-12 px-4">
 //             <input
 //               type="text"
 //               placeholder="Search..."
-//               className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51] text-base"
+//               className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98] text-base"
 //             />
-//             <button className="text-[#4f1c51] hover:text-[#a02ca5] transition-colors">
+//             <button className="text-[#CEBB98] hover:text-[#a02ca5] transition-colors">
 //               <FaCamera />
 //             </button>
-//             <button className="ml-2 text-[#4f1c51] hover:text-[#a02ca5] transition-colors">
+//             <button className="ml-2 text-[#CEBB98] hover:text-[#a02ca5] transition-colors">
 //               <FaSearch />
 //             </button>
 //           </div>
 //         </div>
 
 //         {/* Right Side Icons */}
-//         <div className="flex items-center space-x-5 text-[#4f1c51]">
+//         <div className="flex items-center space-x-5 text-[#CEBB98]">
 //           {/* Mobile search toggle */}
 //           <button
 //             onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
@@ -312,11 +312,11 @@
 //                   Welcome To Everglow Jewels!
 //                 </p>
 //                 <ul className="space-y-3 text-gray-700">
-//                   <Link to="/profile" onClick={handleLinkClick}><li className="hover:text-[#4f1c51] mb-2">Your Profile</li></Link>
-//                   <Link to="/myorder" onClick={handleLinkClick}><li className="hover:text-[#4f1c51] mb-2">My Orders</li></Link>
-//                   <Link to="/terms" onClick={handleLinkClick}><li className="hover:text-[#4f1c51] mb-2">Terms & Conditions</li></Link>
-//                   <Link to="/privacy" onClick={handleLinkClick}><li className="hover:text-[#4f1c51] mb-2">Privacy Policy</li></Link>
-//                   <Link to="/contact" onClick={handleLinkClick}><li className="hover:text-[#4f1c51] mb-2">Contact Us</li></Link>
+//                   <Link to="/profile" onClick={handleLinkClick}><li className="hover:text-[#CEBB98] mb-2">Your Profile</li></Link>
+//                   <Link to="/myorder" onClick={handleLinkClick}><li className="hover:text-[#CEBB98] mb-2">My Orders</li></Link>
+//                   <Link to="/terms" onClick={handleLinkClick}><li className="hover:text-[#CEBB98] mb-2">Terms & Conditions</li></Link>
+//                   <Link to="/privacy" onClick={handleLinkClick}><li className="hover:text-[#CEBB98] mb-2">Privacy Policy</li></Link>
+//                   <Link to="/contact" onClick={handleLinkClick}><li className="hover:text-[#CEBB98] mb-2">Contact Us</li></Link>
 //                   <Link to="/logout" onClick={handleLinkClick}><li className="hover:text-red-600 mb-2">Logout</li></Link>
 //                 </ul>
 //               </div>
@@ -328,14 +328,14 @@
 //       {/* Mobile Search Box */}
 //       {mobileSearchOpen && (
 //         <div className="px-3 pb-3 md:hidden animate-fadeIn">
-//           <div className="flex items-center w-full border border-[#4f1c51] rounded-lg h-12 px-4">
+//           <div className="flex items-center w-full border border-[#CEBB98] rounded-lg h-12 px-4">
 //             <input
 //               type="text"
 //               placeholder="Search..."
-//               className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51] text-base"
+//               className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98] text-base"
 //             />
-//             <button className="text-[#4f1c51]"><FaCamera /></button>
-//             <button className="ml-2 text-[#4f1c51]"><FaSearch /></button>
+//             <button className="text-[#CEBB98]"><FaCamera /></button>
+//             <button className="ml-2 text-[#CEBB98]"><FaSearch /></button>
 //           </div>
 //         </div>
 //       )}
@@ -400,7 +400,7 @@
 //         {/* Left Side: Mobile Menu + Logo */}
 //         <div className="flex items-center space-x-3">
 //           <button
-//             className="md:hidden text-2xl text-[#4f1c51]"
+//             className="md:hidden text-2xl text-[#CEBB98]"
 //             onClick={() => setDrawerOpen(true)}
 //           >
 //             <FaBars />
@@ -413,20 +413,20 @@
 
 //         {/* Search (Desktop Only) */}
 //         <div className="hidden md:flex flex-1 justify-center px-4">
-//           <div className="flex items-center w-full max-w-xl border border-[#4f1c51] rounded-lg h-12 px-4">
+//           <div className="flex items-center w-full max-w-xl border border-[#CEBB98] rounded-lg h-12 px-4">
 //             <input
 //               type="text"
 //               placeholder="Search..."
-//               className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51] text-base"
+//               className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98] text-base"
 //             />
-//             <button className="ml-2 text-[#4f1c51] hover:text-[#a02ca5] transition-colors">
+//             <button className="ml-2 text-[#CEBB98] hover:text-[#a02ca5] transition-colors">
 //               <FaSearch />
 //             </button>
 //           </div>
 //         </div>
 
 //         {/* Right Side Icons */}
-//         <div className="flex items-center space-x-5 text-[#4f1c51]">
+//         <div className="flex items-center space-x-5 text-[#CEBB98]">
 //           {/* Mobile search toggle */}
 //           <button
 //             onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
@@ -475,21 +475,21 @@
 //                 </p>
 //                 <ul className="space-y-3 text-gray-700">
 //                   <Link to="/profile" onClick={handleLinkClick}>
-//                     <li className="hover:text-[#4f1c51] mb-2">Your Profile</li>
+//                     <li className="hover:text-[#CEBB98] mb-2">Your Profile</li>
 //                   </Link>
 //                   <Link to="/myorder" onClick={handleLinkClick}>
-//                     <li className="hover:text-[#4f1c51] mb-2">My Orders</li>
+//                     <li className="hover:text-[#CEBB98] mb-2">My Orders</li>
 //                   </Link>
 //                   <Link to="/terms" onClick={handleLinkClick}>
-//                     <li className="hover:text-[#4f1c51] mb-2">
+//                     <li className="hover:text-[#CEBB98] mb-2">
 //                       Terms & Conditions
 //                     </li>
 //                   </Link>
 //                   <Link to="/privacy" onClick={handleLinkClick}>
-//                     <li className="hover:text-[#4f1c51] mb-2">Privacy Policy</li>
+//                     <li className="hover:text-[#CEBB98] mb-2">Privacy Policy</li>
 //                   </Link>
 //                   <Link to="/contact" onClick={handleLinkClick}>
-//                     <li className="hover:text-[#4f1c51] mb-2">Contact Us</li>
+//                     <li className="hover:text-[#CEBB98] mb-2">Contact Us</li>
 //                   </Link>
 //                   <li
 //                     onClick={() => {
@@ -510,16 +510,16 @@
 //       {/* Mobile Search Box */}
 //       {mobileSearchOpen && (
 //         <div className="px-3 pb-3 md:hidden animate-fadeIn">
-//           <div className="flex items-center w-full border border-[#4f1c51] rounded-lg h-12 px-4">
+//           <div className="flex items-center w-full border border-[#CEBB98] rounded-lg h-12 px-4">
 //             <input
 //               type="text"
 //               placeholder="Search..."
-//               className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51] text-base"
+//               className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98] text-base"
 //             />
-//             <button className="text-[#4f1c51]">
+//             <button className="text-[#CEBB98]">
 //               <FaCamera />
 //             </button>
-//             <button className="ml-2 text-[#4f1c51]">
+//             <button className="ml-2 text-[#CEBB98]">
 //               <FaSearch />
 //             </button>
 //           </div>
@@ -604,19 +604,19 @@ const Header = () => {
               sm:max-w-[200px] sm:h-8
               md:max-w-md md:h-10
               lg:max-w-xl lg:h-12
-              border border-[#4f1c51] rounded-lg
+              border border-[#CEBB98] rounded-lg
               overflow-hidden bg-white
             "
           >
             <input
               type="text"
               placeholder="Search..."
-              className="flex-grow outline-none text-[#4f1c51] placeholder-[#4f1c51]
+              className="flex-grow outline-none text-[#CEBB98] placeholder-[#CEBB98]
                          text-[11px] sm:text-xs md:text-sm lg:text-base px-2"
             />
             <button
               className="flex items-center justify-center px-2
-                         text-[#4f1c51] hover:text-[#a02ca5] transition-colors
+                         text-[#CEBB98] hover:text-[#a02ca5] transition-colors
                          bg-transparent border-none"
             >
               <FaSearch className="text-xs sm:text-sm md:text-base" />
@@ -626,7 +626,21 @@ const Header = () => {
 
 
         {/* Right: Account + Drawer */}
-        <div className="flex items-center space-x-4 text-[#4f1c51]">
+        <div className="flex items-center space-x-4 text-[#CEBB98]">
+                    <div className="hidden md:flex items-center space-x-5">
+            <Link to="/wishlist">
+              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5] transition-colors">
+                <FaHeart className="text-xl" />
+                <span className="hidden sm:block text-xs">Wishlist</span>
+              </div>
+            </Link>
+            <Link to="/cart">
+              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5] transition-colors">
+                <FaShoppingCart className="text-xl" />
+                <span className="hidden sm:block text-xs">Cart</span>
+              </div>
+            </Link>
+          </div>
           {/* Account */}
           <div
             className="flex flex-col items-center cursor-pointer relative"
@@ -653,21 +667,21 @@ const Header = () => {
                 </p>
                 <ul className="space-y-3 text-gray-700">
                   <Link to="/profile" onClick={handleLinkClick}>
-                    <li className="hover:text-[#4f1c51] mb-2">Your Profile</li>
+                    <li className="hover:text-[#CEBB98] mb-2">Your Profile</li>
                   </Link>
                   <Link to="/myorder" onClick={handleLinkClick}>
-                    <li className="hover:text-[#4f1c51] mb-2">My Orders</li>
+                    <li className="hover:text-[#CEBB98] mb-2">My Orders</li>
                   </Link>
                   <Link to="/terms" onClick={handleLinkClick}>
-                    <li className="hover:text-[#4f1c51] mb-2">
+                    <li className="hover:text-[#CEBB98] mb-2">
                       Terms & Conditions
                     </li>
                   </Link>
                   <Link to="/privacy" onClick={handleLinkClick}>
-                    <li className="hover:text-[#4f1c51] mb-2">Privacy Policy</li>
+                    <li className="hover:text-[#CEBB98] mb-2">Privacy Policy</li>
                   </Link>
                   <Link to="/contact" onClick={handleLinkClick}>
-                    <li className="hover:text-[#4f1c51] mb-2">Contact Us</li>
+                    <li className="hover:text-[#CEBB98] mb-2">Contact Us</li>
                   </Link>
                   <li
                     onClick={() => {
@@ -692,20 +706,7 @@ const Header = () => {
           </button>
 
           {/* Wishlist + Cart (desktop only) */}
-          <div className="hidden md:flex items-center space-x-5">
-            <Link to="/wishlist">
-              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5] transition-colors">
-                <FaHeart className="text-xl" />
-                <span className="hidden sm:block text-xs">Wishlist</span>
-              </div>
-            </Link>
-            <Link to="/cart">
-              <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5] transition-colors">
-                <FaShoppingCart className="text-xl" />
-                <span className="hidden sm:block text-xs">Cart</span>
-              </div>
-            </Link>
-          </div>
+
         </div>
       </div>
 
@@ -727,7 +728,7 @@ const Header = () => {
           </div>
 
           {/* Bottom: Wishlist + Cart */}
-          <div className="border-t p-5 flex justify-around text-[#4f1c51]">
+          <div className="border-t p-5 flex justify-around text-[#CEBB98]">
             <Link to="/wishlist" onClick={handleLinkClick}>
               <div className="flex flex-col items-center cursor-pointer hover:text-[#a02ca5]">
                 <FaHeart className="text-xl" />

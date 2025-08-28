@@ -39,7 +39,7 @@ const Wishlist = () => {
                 { id: 1, name: "Silver Ring", price: 299, oldPrice: 399, image: product1 },
               ])
             }
-            className="px-6 py-2 bg-[#4F1c51] text-white rounded-md hover:bg-[#4F1c51] transition"
+            className="px-6 py-2 bg-[#CEBB98] text-white rounded-md hover:bg-[#CEBB98] transition"
           >
             View Collection
           </button>

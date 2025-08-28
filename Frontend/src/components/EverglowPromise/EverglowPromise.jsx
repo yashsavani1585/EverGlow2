@@ -30,35 +30,35 @@
 //         {/* Left Heading */}
 //         <div className="w-full md:w-1/3 text-center md:text-left relative">
 //           <h3
-//             className="text-4xl md:text-5xl font-serif text-[#4f1c51]"
+//             className="text-4xl md:text-5xl font-serif text-[#CEBB98]"
 //             style={{ fontFamily: "'Garamond', serif" }}
 //           >
 //             Everglow
 //           </h3>
 //           <h1
-//             className="text-6xl md:text-7xl font-serif font-bold text-[#4f1c51] leading-tight"
+//             className="text-6xl md:text-7xl font-serif font-bold text-[#CEBB98] leading-tight"
 //             style={{ fontFamily: "'Garamond', serif" }}
 //           >
 //             Promise
 //           </h1>
 
 //           {/* Horizontal Line aligned to middle of "Promise" */}
-//           <div className="hidden md:block absolute top-[55%] right-0 w-28 border-t-2 border-[#4f1c51]"></div>
+//           <div className="hidden md:block absolute top-[55%] right-0 w-28 border-t-2 border-[#CEBB98]"></div>
 //         </div>
 
 //         {/* Right Grid Box */}
-//         <div className="w-full md:w-2/3 border-2 border-[#4f1c51] rounded-md p-10">
+//         <div className="w-full md:w-2/3 border-2 border-[#CEBB98] rounded-md p-10">
 //           <div className="grid grid-cols-2 md:grid-cols-3 gap-10 text-center">
 //             {promises.map((item, index) => (
 //               <div key={index} className="flex flex-col items-center">
-//                 <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#4f1c51]">
+//                 <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#CEBB98]">
 //                   <img
 //                     src={item.img}
 //                     alt={item.text}
 //                     className="w-10 h-10 object-contain"
 //                   />
 //                 </div>
-//                 <p className="mt-4 text-sm md:text-base font-medium text-[#4f1c51]">
+//                 <p className="mt-4 text-sm md:text-base font-medium text-[#CEBB98]">
 //                   {item.text}
 //                 </p>
 //               </div>
@@ -118,24 +118,24 @@ const EverglowPromise = () => {
         {/* Left Heading */}
         <div className="w-full md:w-1/3 text-center md:text-left relative">
           <h3
-            className="text-4xl md:text-5xl font-serif text-[#4f1c51]"
+            className="text-4xl md:text-5xl font-serif text-[#CEBB98]"
             style={{ fontFamily: "'Garamond', serif" }}
           >
             Everglow
           </h3>
           <h1
-            className="text-6xl md:text-7xl font-serif font-bold text-[#4f1c51] leading-tight"
+            className="text-6xl md:text-7xl font-serif font-bold text-[#CEBB98] leading-tight"
             style={{ fontFamily: "'Garamond', serif" }}
           >
             Promise
           </h1>
 
           {/* Horizontal Line */}
-          <div className="hidden md:block absolute top-[55%] right-0 w-28 border-t-2 border-[#4f1c51]"></div>
+          <div className="hidden md:block absolute top-[55%] right-0 w-28 border-t-2 border-[#CEBB98]"></div>
         </div>
 
         {/* Right Grid Box */}
-        <div className="w-full md:w-2/3 border-2 border-[#4f1c51] rounded-md p-10">
+        <div className="w-full md:w-2/3 border-2 border-[#CEBB98] rounded-md p-10">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-10 text-center">
             {promises.map((item, index) => (
               <motion.div
@@ -145,14 +145,14 @@ const EverglowPromise = () => {
                 transition={{ delay: index * 0.2, duration: 0.6 }}
                 className="flex flex-col items-center"
               >
-                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#4f1c51]">
+                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#CEBB98]">
                   <img
                     src={item.img}
                     alt={item.text}
                     className="w-10 h-10 object-contain"
                   />
                 </div>
-                <p className="mt-4 text-sm md:text-base font-medium text-[#4f1c51]">
+                <p className="mt-4 text-sm md:text-base font-medium text-[#CEBB98]">
                   {item.text}
                 </p>
               </motion.div>

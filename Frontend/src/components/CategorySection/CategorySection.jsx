@@ -33,10 +33,10 @@
 //     <section className="w-full bg-white py-12 px-4 md:px-12">
 //       {/* Heading */}
 //       <div className="text-center mb-10">
-//         <h2 className="text-3xl md:text-4xl font-semibold text-purple-900">
+//         <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
 //           Find Your Perfect Match
 //         </h2>
-//         <p className="text-lg md:text-xl text-purple-600 font-medium mt-2">
+//         <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
 //           Radiance Fits for Everyone
 //         </p>
 //       </div>
@@ -62,7 +62,7 @@
 //                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
 //                     />
 //                   </div>
-//                   <p className="mt-3 text-sm md:text-base font-medium text-purple-900">
+//                   <p className="mt-3 text-sm md:text-base font-medium text-[#CEBB98]">
 //                     {cat.title}
 //                   </p>
 //                 </Link>
@@ -77,13 +77,13 @@
 //             onClick={prevSlide}
 //             className="bg-white shadow-md p-3 rounded-full hover:bg-purple-100"
 //           >
-//             <FaChevronLeft className="text-purple-900 text-lg sm:text-xl" />
+//             <FaChevronLeft className="text-[#CEBB98] text-lg sm:text-xl" />
 //           </button>
 //           <button
 //             onClick={nextSlide}
 //             className="bg-white shadow-md p-3 rounded-full hover:bg-purple-100"
 //           >
-//             <FaChevronRight className="text-purple-900 text-lg sm:text-xl" />
+//             <FaChevronRight className="text-[#CEBB98] text-lg sm:text-xl" />
 //           </button>
 //         </div>
 //       </div>
@@ -103,7 +103,7 @@
 //                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 //               />
 //             </div>
-//             <p className="mt-3 text-base font-medium text-purple-900">
+//             <p className="mt-3 text-base font-medium text-[#CEBB98]">
 //               {cat.title}
 //             </p>
 //           </Link>
@@ -168,10 +168,10 @@
 //     <section className="w-full bg-white py-12 px-4 md:px-12">
 //       {/* Heading */}
 //       <div className="text-center mb-10">
-//         <h2 className="text-3xl md:text-4xl font-semibold text-purple-900">
+//         <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
 //           Find Your Perfect Match
 //         </h2>
-//         <p className="text-lg md:text-xl text-purple-600 font-medium mt-2">
+//         <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
 //           Radiance Fits for Everyone
 //         </p>
 //       </div>
@@ -202,7 +202,7 @@
 //                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
 //                     />
 //                   </div>
-//                   <p className="mt-3 text-sm md:text-base font-medium text-purple-900">
+//                   <p className="mt-3 text-sm md:text-base font-medium text-[#CEBB98]">
 //                     {cat.title}
 //                   </p>
 //                 </Link>
@@ -217,13 +217,13 @@
 //             onClick={prevSlide}
 //             className="bg-white shadow-md p-3 rounded-full hover:bg-purple-100"
 //           >
-//             <FaChevronLeft className="text-purple-900 text-lg sm:text-xl" />
+//             <FaChevronLeft className="text-[#CEBB98] text-lg sm:text-xl" />
 //           </button>
 //           <button
 //             onClick={nextSlide}
 //             className="bg-white shadow-md p-3 rounded-full hover:bg-purple-100"
 //           >
-//             <FaChevronRight className="text-purple-900 text-lg sm:text-xl" />
+//             <FaChevronRight className="text-[#CEBB98] text-lg sm:text-xl" />
 //           </button>
 //         </div>
 //       </div>
@@ -286,10 +286,10 @@ const CategorySection = () => {
     <section className="w-full bg-white py-12 px-4 md:px-12">
       {/* Heading */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold text-purple-900">
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#CEBB98]">
           Find Your Perfect Match
         </h2>
-        <p className="text-lg md:text-xl text-purple-600 font-medium mt-2">
+        <p className="text-lg md:text-xl text-[#CEBB98] font-medium mt-2">
           Radiance Fits for Everyone
         </p>
       </div>
@@ -320,7 +320,7 @@ const CategorySection = () => {
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
-                  <p className="mt-3 text-sm md:text-base font-medium text-purple-900">
+                  <p className="mt-3 text-sm md:text-base font-medium text-[#CEBB98]">
                     {cat.title}
                   </p>
                 </Link>
@@ -336,13 +336,13 @@ const CategorySection = () => {
               onClick={prevSlide}
               className="bg-white shadow-md p-3 rounded-full hover:bg-purple-100"
             >
-              <FaChevronLeft className="text-purple-900 text-lg sm:text-xl" />
+              <FaChevronLeft className="text-[#CEBB98] text-lg sm:text-xl" />
             </button>
             <button
               onClick={nextSlide}
               className="bg-white shadow-md p-3 rounded-full hover:bg-purple-100"
             >
-              <FaChevronRight className="text-purple-900 text-lg sm:text-xl" />
+              <FaChevronRight className="text-[#CEBB98] text-lg sm:text-xl" />
             </button>
           </div>
         )}

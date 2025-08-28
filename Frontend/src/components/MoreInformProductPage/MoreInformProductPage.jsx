@@ -45,7 +45,7 @@ const MoreInformProductPage = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="w-12 h-12 border-4 border-[#4F1c51] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-[#CEBB98] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -110,20 +110,20 @@ const MoreInformProductPage = () => {
           {/* Buttons */}
           <div className="flex flex-col gap-4">
             <div className="flex gap-3">
-              <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
                 Buy Now
               </button>
-              <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
                 Add to Cart
               </button>
             </div>
-            <button className="w-full bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+            <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
               Order On Whatsapp
             </button>
           </div>
 
           {/* Offers Section */}
-          <div className="bg-[#4F1c51] text-white rounded-lg p-5 space-y-4">
+          <div className="bg-[#CEBB98] text-white rounded-lg p-5 space-y-4">
             <h3 className="font-semibold text-lg">Offers For You</h3>
             <div className="bg-white text-black rounded-md p-4 shadow-sm">
               <p className="font-bold">FLAT 100 off</p>

@@ -6,7 +6,7 @@ const PersonalizedJewelryForm = () => {
     <div className="max-w-4xl mx-auto py-10 px-4">
       {/* Divider Image */}
       <div className="flex items-center justify-center mb-8">
-        <img src={divider} alt="divider" className="h-8" />
+        <img src={divider} alt="divider" className="h-8 w-90" />
       </div>
 
       {/* Form */}
@@ -17,13 +17,13 @@ const PersonalizedJewelryForm = () => {
             type="text"
             placeholder="Name*"
             required
-            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-purple-700"
+            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
           />
           <input
             type="tel"
             placeholder="Mobile Number*"
             required
-            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-purple-700"
+            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
           />
         </div>
 
@@ -32,43 +32,39 @@ const PersonalizedJewelryForm = () => {
           type="email"
           placeholder="Email Address*"
           required
-          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-purple-700"
+          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
         />
 
         {/* Row 3 */}
         <select
           required
-          className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black"
+          className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-500"
         >
-          <option value="" disabled selected className="text-purple-700">
+          <option value="" disabled selected className="text-gray-500">
             Choose Type
           </option>
-          <option value="ring" className="text-purple-700" >Ring</option>
-          <option value="necklace" className="text-purple-700">Necklace</option>
-          <option value="bracelet" className="text-purple-700">Bracelet</option>
-          <option value="earrings" className="text-purple-700">Earrings</option>
+          <option value="ring" className="text-gray-700" >Ring</option>
+          <option value="necklace" className="text-gray-700">Necklace</option>
+          <option value="bracelet" className="text-gray-700">Bracelet</option>
+          <option value="earrings" className="text-gray-700">Earrings</option>
         </select>
 
 
         {/* Row 4 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input
-            type="text"
-            placeholder="Total Budget"
-            className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-purple-700"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+         
           <select
             required
-            className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black"
+            className="w-full border rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-500"
             defaultValue=""
           >
-            <option value="" disabled className="text-purple-700">
+            <option value="" disabled className="text-gary-500">
               Metal Type
             </option>
-            <option value="gold" className="text-black">Gold</option>
-            <option value="silver" className="text-black">Silver</option>
-            <option value="platinum" className="text-black">Platinum</option>
-            <option value="rose-gold" className="text-black">Rose Gold</option>
+            <option value="gold" className="text-gray-700">Gold</option>
+            <option value="silver" className="text-gray-700">Silver</option>
+            <option value="platinum" className="text-gray-700">Platinum</option>
+            <option value="rose-gold" className="text-gray-700">Rose Gold</option>
           </select>
 
         </div>
@@ -85,7 +81,7 @@ const PersonalizedJewelryForm = () => {
               accept=".pdf, .jpg, .png, .jpeg, .doc, .docx"
               className="hidden"
             />
-            <span className="text-purple-700 font-medium">Choose File</span>
+            <span className="text-gray-500 font-medium">Choose File</span>
           </label>
           <p className="text-gray-500 text-sm mt-2">
             Allowed types: pdf, jpg, png, jpeg, doc, docx.
@@ -96,7 +92,7 @@ const PersonalizedJewelryForm = () => {
         <textarea
           rows="4"
           placeholder="Please describe your idea for this Custom Project..."
-          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-purple-700"
+          className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none placeholder-gray-500"
         ></textarea>
 
         {/* Submit Button */}

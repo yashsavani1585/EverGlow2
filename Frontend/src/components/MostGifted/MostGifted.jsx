@@ -7,7 +7,7 @@
 //   return (
 //     <section className="w-full py-16 px-6 md:px-20 bg-white">
 //       {/* Title */}
-//       <h2 className="text-center text-[42px] font-bold text-[#4f1c51] mb-14 uppercase">
+//       <h2 className="text-center text-[42px] font-bold text-[#CEBB98] mb-14 uppercase">
 //         MOST GIFTED
 //       </h2>
 
@@ -25,7 +25,7 @@
 //         {/* Right Top Text */}
 //         <div className="flex flex-col justify-center">
 //           <p className="text-sm text-gray-500 uppercase">Timeless Beauty</p>
-//           <h3 className="mt-2 text-[24px] font-semibold text-[#4f1c51] uppercase">
+//           <h3 className="mt-2 text-[24px] font-semibold text-[#CEBB98] uppercase">
 //             Elegant Earrings
 //           </h3>
 //           <p className="mt-3 text-gray-600 text-[15px] leading-relaxed">
@@ -33,7 +33,7 @@
 //           </p>
 //           <a
 //             href="#"
-//             className="mt-4 text-sm text-[#4f1c51] underline"
+//             className="mt-4 text-sm text-[#CEBB98] underline"
 //           >
 //             Discover more
 //           </a>
@@ -42,7 +42,7 @@
 //         {/* Left Middle Text */}
 //         <div className="flex flex-col justify-center">
 //           <p className="text-sm text-gray-500 uppercase">New Collection</p>
-//           <h3 className="mt-2 text-[24px] font-semibold text-[#4f1c51] uppercase">
+//           <h3 className="mt-2 text-[24px] font-semibold text-[#CEBB98] uppercase">
 //             Wedding Rings
 //           </h3>
 //           <p className="mt-3 text-gray-600 text-[15px] leading-relaxed">
@@ -50,7 +50,7 @@
 //           </p>
 //           <a
 //             href="#"
-//             className="mt-4 text-sm text-[#4f1c51] underline"
+//             className="mt-4 text-sm text-[#CEBB98] underline"
 //           >
 //             Discover more
 //           </a>
@@ -77,7 +77,7 @@
 //         {/* Right Bottom Text */}
 //         <div className="flex flex-col justify-center">
 //           <p className="text-sm text-gray-500 uppercase">Modern Charm</p>
-//           <h3 className="mt-2 text-[24px] font-semibold text-[#4f1c51] uppercase">
+//           <h3 className="mt-2 text-[24px] font-semibold text-[#CEBB98] uppercase">
 //             Luxury Necklace
 //           </h3>
 //           <p className="mt-3 text-gray-600 text-[15px] leading-relaxed">
@@ -85,7 +85,7 @@
 //           </p>
 //           <a
 //             href="#"
-//             className="mt-4 text-sm text-[#4f1c51] underline"
+//             className="mt-4 text-sm text-[#CEBB98] underline"
 //           >
 //             Discover more
 //           </a>

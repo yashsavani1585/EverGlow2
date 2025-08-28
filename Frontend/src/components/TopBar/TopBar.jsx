@@ -2,7 +2,7 @@ import React from "react";
 
 const TopBar = () => {
   return (
-    <div className="w-full bg-[#4f1c51] text-white text-center py-2">
+    <div className="w-full bg-[#CEBB98] text-white text-center py-2">
       <p className="font-semibold">
         Get Flat 20% Off on All Silver Jewelry!
       </p>

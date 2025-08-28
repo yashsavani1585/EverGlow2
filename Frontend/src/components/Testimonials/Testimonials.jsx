@@ -21,7 +21,7 @@
 //       {/* Header */}
 //       <div className="text-center pt-16 pb-8 bg-white">
 //         <h2
-//           className="text-4xl md:text-5xl font-medium text-[#4f1c51]"
+//           className="text-4xl md:text-5xl font-medium text-[#CEBB98]"
 //           style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}
 //         >
 //           Customer Testimonials
@@ -32,7 +32,7 @@
 //       </div>
 
 //       {/* Testimonials Section */}
-//       <section className="w-full bg-[#4f1c51] text-white py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[623px] flex items-center justify-center">
+//       <section className="w-full bg-[#CEBB98] text-white py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[623px] flex items-center justify-center">
 //         {/* === Border Lines === */}
 //         <div className="absolute inset-0 z-0 pointer-events-none">
 //           {/* Top Horizontal */}
@@ -124,7 +124,7 @@
 //       {/* Header */}
 //       <div className="text-center pt-12 pb-8 px-4">
 //         <h2
-//           className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#4f1c51]"
+//           className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#CEBB98]"
 //           style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}
 //         >
 //           Customer Testimonials
@@ -135,7 +135,7 @@
 //       </div>
 
 //       {/* Testimonials Section */}
-//       <section className="relative w-full bg-[#4f1c51] text-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
+//       <section className="relative w-full bg-[#CEBB98] text-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
 //         {/* Border Lines */}
 //         <div className="absolute inset-0 z-0 pointer-events-none">
 //           <div className="absolute top-0 left-0 w-full h-px bg-white"></div>
@@ -664,7 +664,7 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen min-w-[99] p-6 sm:p-8 lg:p-12 overflow-hidden overflow-x-hidden bg-[#4C1242] font-['Inter']">
+    <section className="relative flex flex-col items-center justify-center min-h-screen min-w-[99] p-6 sm:p-8 lg:p-12 overflow-hidden overflow-x-hidden bg-[#CEBB98] font-['Inter']">
       {/* Grid Lines */}
       <div className="absolute top-[20%] left-0 h-px w-[90%] bg-white hidden sm:block"></div>
       <div className="absolute bottom-[20%] left-25 h-px w-full bg-white hidden sm:block"></div>

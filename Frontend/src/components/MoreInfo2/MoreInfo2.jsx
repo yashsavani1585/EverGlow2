@@ -90,20 +90,20 @@
 //         {/* Buttons */}
 //         <div className="flex flex-col gap-4">
 //           <div className="flex flex-col sm:flex-row gap-3">
-//             <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+//             <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
 //               Buy Now
 //             </button>
-//             <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+//             <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
 //               Add to Cart
 //             </button>
 //           </div>
-//           <button className="w-full bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+//           <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
 //             Order On Whatsapp
 //           </button>
 //         </div>
 
 //         {/* Offers Section */}
-//         <div className="bg-[#4F1c51] text-white rounded-lg p-5 space-y-4">
+//         <div className="bg-[#CEBB98] text-white rounded-lg p-5 space-y-4">
 //           <h3 className="font-semibold text-lg">Offers For You</h3>
 //           {["FLAT 100 off", "Everglow Jewels"].map((offer, idx) => (
 //             <div key={idx} className="bg-white text-black rounded-md p-4 shadow-sm">
@@ -186,7 +186,7 @@
 //   if (loading) {
 //     return (
 //       <div className="min-h-screen flex items-center justify-center bg-white">
-//         <div className="w-12 h-12 border-4 border-[#4F1c51] border-t-transparent rounded-full animate-spin"></div>
+//         <div className="w-12 h-12 border-4 border-[#CEBB98] border-t-transparent rounded-full animate-spin"></div>
 //       </div>
 //     );
 //   }
@@ -270,10 +270,10 @@
 //           {/* Buttons */}
 //           <div className="flex flex-col gap-4">
 //             <div className="flex flex-col sm:flex-row gap-3 items-center">
-//               <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+//               <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
 //                 Buy Now
 //               </button>
-//               <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+//               <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
 //                 Add to Cart
 //               </button>
 //               <button className="w-8 h-8 rounded-full bg-[#6B6A3D] border border-gray-300 hover:scale-110 transition"
@@ -281,17 +281,17 @@
 //               </button>
 
 //               {/* White Gold color circle */}
-//               <button className="w-8 h-8 rounded-full bg-[#4F1c51] border border-gray-300 hover:scale-110 transition"
+//               <button className="w-8 h-8 rounded-full bg-[#CEBB98] border border-gray-300 hover:scale-110 transition"
 //                 title="White Gold">
 //               </button>
 //             </div>
-//             <button className="w-full bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
+//             <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-950 transition">
 //               Order On Whatsapp
 //             </button>
 //           </div>
 
 //           {/* Offers Section */}
-//           <div className="bg-[#4F1c51] text-white rounded-lg p-5 space-y-4">
+//           <div className="bg-[#CEBB98] text-white rounded-lg p-5 space-y-4">
 //             <h3 className="font-semibold text-lg">Offers For You</h3>
 //             {["FLAT 100 off", "Everglow Jewels"].map((offer, idx) => (
 //               <div
@@ -481,7 +481,7 @@
 //   if (loading) {
 //     return (
 //       <div className="min-h-screen flex items-center justify-center bg-white">
-//         <div className="w-12 h-12 border-4 border-[#4F1c51] border-t-transparent rounded-full animate-spin"></div>
+//         <div className="w-12 h-12 border-4 border-[#CEBB98] border-t-transparent rounded-full animate-spin"></div>
 //       </div>
 //     );
 //   }
@@ -566,7 +566,7 @@
 //         <div className="flex flex-col gap-4 w-full">
 //           <div className="flex flex-col sm:flex-row gap-3 items-center w-full">
 //             {/* Buy Now */}
-//             <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+//             <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
 //               Buy Now
 //             </button>
 
@@ -586,7 +586,7 @@
 //               ></button>
 //               <button
 //                 onClick={() => setVariant("white")}
-//                 className={`w-8 h-8 rounded-full bg-[#4F1c51] border ${
+//                 className={`w-8 h-8 rounded-full bg-[#CEBB98] border ${
 //                   variant === "white" ? "ring-2 ring-purple-700" : "border-gray-300"
 //                 } hover:scale-110 transition`}
 //                 title="White Gold"
@@ -599,7 +599,7 @@
 //             Order on WhatsApp
 //           </button>
 //         </div>
-//             <div className="bg-[#4F1c51] text-white rounded-lg p-5 space-y-4">
+//             <div className="bg-[#CEBB98] text-white rounded-lg p-5 space-y-4">
 //             <h3 className="font-semibold text-lg">Offers For You</h3>
 //             {["FLAT 100 off", "Everglow Jewels"].map((offer, idx) => (
 //               <div
@@ -792,7 +792,7 @@ const MoreInfo2 = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="w-12 h-12 border-4 border-[#4F1c51] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-[#CEBB98] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -879,12 +879,12 @@ const MoreInfo2 = () => {
           <div className="flex flex-col gap-4 w-full">
             <div className="flex flex-col sm:flex-row gap-3 items-center w-full">
               {/* Buy Now */}
-              <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
                 Buy Now
               </button>
 
               {/* Add to Cart */}
-              <button className="flex-1 bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
                 Add to Cart
               </button>
 
@@ -905,13 +905,13 @@ const MoreInfo2 = () => {
             </div>
 
             {/* WhatsApp */}
-            <button className="w-full bg-[#4F1c51] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+            <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
               Order on WhatsApp
             </button>
           </div>
 
           {/* Offers */}
-          <div className="bg-[#4F1c51] text-white rounded-lg p-5 space-y-4">
+          <div className="bg-[#CEBB98] text-white rounded-lg p-5 space-y-4">
             <h3 className="font-semibold text-lg">Offers For You</h3>
             {["FLAT 100 off", "Everglow Jewels"].map((offer, idx) => (
               <div key={idx} className="bg-white text-black rounded-md p-4 shadow-sm">
