@@ -6,7 +6,6 @@ import PromotionalBanner3 from "../../assets/ProductBaneerAds3.png";
 import PromotionalBanner1 from "../../assets/productAds1.png";
 
 const RingProductSection = () => {
-  // Dummy product data with discount
   const products = [
     { id: 1, title: "Diamond Ring", price: "₹2599", image: product1, discount: "10%" },
     { id: 2, title: "Gold Ring", price: "₹1999", image: product1, discount: "10%" },
@@ -32,8 +31,7 @@ const RingProductSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-10 space-y-10">
-      
+    <div className="max-w-7xl mx-auto px-4 py-10 space-y-10">
       {/* First 3 Products */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products.slice(0, 3).map((product) => (
@@ -50,7 +48,6 @@ const RingProductSection = () => {
 
       {/* Banner + 1 Product */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-        {/* Left Banner */}
         <div className="md:col-span-2 rounded-2xl overflow-hidden">
           <img
             src={PromotionalBanner2}
@@ -59,8 +56,6 @@ const RingProductSection = () => {
             loading="lazy"
           />
         </div>
-
-        {/* Right Single Product */}
         <div>
           <ProductCard product={products[0]} imageH="h-[180px] md:h-[250px]" />
         </div>
@@ -74,19 +69,16 @@ const RingProductSection = () => {
       </div>
 
       {/* 2 Products + Big Ad */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch px-2 md:px-12 lg:px-20 py-12">
-        {/* Left Side: 2 Products */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch py-12">
         <div className="flex flex-col gap-6">
           <ProductCard product={products[0]} />
           <ProductCard product={products[1]} />
         </div>
-
-        {/* Right Side: Big Ad */}
         <div className="md:col-span-2 relative rounded-2xl overflow-hidden">
           <img
             src={PromotionalBanner3}
             alt="Ad Banner"
-            className="w-full h-[250px] sm:h-[350px] md:h-[865px] object-cover"
+            className="w-full h-[250px] sm:h-[350px] md:h-[700px] object-fill"
           />
         </div>
       </div>
@@ -100,7 +92,6 @@ const RingProductSection = () => {
 
       {/* Banner + 1 Product */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-        {/* Left Banner */}
         <div className="md:col-span-2 rounded-2xl overflow-hidden">
           <img
             src={PromotionalBanner1}
@@ -109,8 +100,6 @@ const RingProductSection = () => {
             loading="lazy"
           />
         </div>
-
-        {/* Right Single Product */}
         <div>
           <ProductCard product={products[0]} imageH="h-[180px] md:h-[250px]" />
         </div>

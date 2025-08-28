@@ -34,109 +34,99 @@ const NECKLACEProductionSection = () => {
    ];
 
   return (
-      <div className="container mx-auto px-4 py-10 space-y-10">
-      
-      {/* First 3 Products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(0, 3).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-
-      {/* Next 3 Products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(3, 6).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-
-      {/* Banner + 1 Product */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-        {/* Left Banner */}
-        <div className="md:col-span-2 rounded-2xl overflow-hidden">
-          <img
-            src={PromotionalBanner2}
-            alt="Promotional Banner"
-            className="w-full h-[250px] sm:h-[350px] md:h-[420px] object-cover"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Right Single Product */}
-        <div>
-          <ProductCard product={products[0]} imageH="h-[180px] md:h-[250px]" />
-        </div>
-      </section>
-
-      {/* 3 More Products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(6, 9).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-
-      {/* 2 Products + Big Ad */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch px-2 md:px-12 lg:px-20 py-12">
-        {/* Left Side: 2 Products */}
-        <div className="flex flex-col gap-6">
-          <ProductCard product={products[0]} />
-          <ProductCard product={products[1]} />
-        </div>
-
-        {/* Right Side: Big Ad */}
-        <div className="md:col-span-2 relative rounded-2xl overflow-hidden">
-          <img
-            src={PromotionalBanner3}
-            alt="Ad Banner"
-            className="w-full h-[250px] sm:h-[350px] md:h-[865px] object-cover"
-          />
-        </div>
-      </div>
-
-      {/* More Product Grids */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(9, 12).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-
-      {/* Banner + 1 Product */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-        {/* Left Banner */}
-        <div className="md:col-span-2 rounded-2xl overflow-hidden">
-          <img
-            src={PromotionalBanner1}
-            alt="Promotional Banner"
-            className="w-full h-[250px] sm:h-[350px] md:h-[420px] object-cover"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Right Single Product */}
-        <div>
-          <ProductCard product={products[0]} imageH="h-[180px] md:h-[250px]" />
-        </div>
-      </section>
-
-      {/* Remaining Products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(12, 15).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(15, 18).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.slice(18, 21).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
+    <div className="max-w-7xl mx-auto px-4 py-10 space-y-10">
+         {/* First 3 Products */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(0, 3).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+   
+         {/* Next 3 Products */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(3, 6).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+   
+         {/* Banner + 1 Product */}
+         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+           <div className="md:col-span-2 rounded-2xl overflow-hidden">
+             <img
+               src={PromotionalBanner2}
+               alt="Promotional Banner"
+               className="w-full h-[250px] sm:h-[350px] md:h-[420px] object-cover"
+               loading="lazy"
+             />
+           </div>
+           <div>
+             <ProductCard product={products[0]} imageH="h-[180px] md:h-[250px]" />
+           </div>
+         </section>
+   
+         {/* 3 More Products */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(6, 9).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+   
+         {/* 2 Products + Big Ad */}
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch py-12">
+           <div className="flex flex-col gap-6">
+             <ProductCard product={products[0]} />
+             <ProductCard product={products[1]} />
+           </div>
+           <div className="md:col-span-2 relative rounded-2xl overflow-hidden">
+             <img
+               src={PromotionalBanner3}
+               alt="Ad Banner"
+               className="w-full h-[250px] sm:h-[350px] md:h-[700px] object-fill"
+             />
+           </div>
+         </div>
+   
+         {/* More Product Grids */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(9, 12).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+   
+         {/* Banner + 1 Product */}
+         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+           <div className="md:col-span-2 rounded-2xl overflow-hidden">
+             <img
+               src={PromotionalBanner1}
+               alt="Promotional Banner"
+               className="w-full h-[250px] sm:h-[350px] md:h-[420px] object-cover"
+               loading="lazy"
+             />
+           </div>
+           <div>
+             <ProductCard product={products[0]} imageH="h-[180px] md:h-[250px]" />
+           </div>
+         </section>
+   
+         {/* Remaining Products */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(12, 15).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+   
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(15, 18).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+   
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           {products.slice(18, 21).map((product) => (
+             <ProductCard key={product.id} product={product} />
+           ))}
+         </div>
+       </div>
   );
 };
 
