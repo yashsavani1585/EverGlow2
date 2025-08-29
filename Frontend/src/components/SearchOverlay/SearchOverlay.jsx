@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import ring from "../../assets/Rings.png";
+import naklase from "../../assets/Necklace.png";
+import earing from "../../assets/Earrings.png";
+import bracelet from "../../assets/Bracelet.png";
 
 const SearchOverlay = ({ open, onClose, anchorRef, query, setQuery }) => {
   useEffect(() => {
@@ -16,11 +20,10 @@ const SearchOverlay = ({ open, onClose, anchorRef, query, setQuery }) => {
   if (!open) return null;
 
   const products = [
-    { name: "The Bulbasaur Pendant", img: "https://via.placeholder.com/150" },
-    { name: "The Gufo Kids Ring", img: "https://via.placeholder.com/150" },
-    { name: "The Panda Carino Kids Ring", img: "https://via.placeholder.com/150" },
-    { name: "The Pikachu Pendant", img: "https://via.placeholder.com/150" },
-    { name: "The Unicorn Kids Ring", img: "https://via.placeholder.com/150" },
+    { name: "The Bulbasaur Ring", img: ring },
+    { name: "The Gufo Kids Necklace", img: naklase },
+    { name: "The Panda Carino Kids Earrings", img: earing },
+    { name: "The Pikachu Bracelet", img: bracelet },
   ];
 
   const filtered = products.filter((p) =>
