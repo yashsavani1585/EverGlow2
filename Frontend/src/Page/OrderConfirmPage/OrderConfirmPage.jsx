@@ -1,12 +1,18 @@
-import React from 'react'
-import OrderConfirm from '../../components/OrderConfirm/OrderConfirm'
+import React, { Suspense, lazy } from "react";
+
+// Lazy load component
+const OrderConfirm = lazy(() =>
+  import("../../components/OrderConfirm/OrderConfirm")
+);
 
 const OrderConfirmPage = () => {
   return (
     <div>
-        <OrderConfirm/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <OrderConfirm />
+      </Suspense>
     </div>
-  )
-}
+  );
+};
 
-export default OrderConfirmPage
+export default OrderConfirmPage;

@@ -1,12 +1,16 @@
-import React from 'react'
-import Auth from '../../components/Auth/Auth'
+import React, { Suspense, lazy } from "react";
+
+// Lazy load the Auth component
+const Auth = lazy(() => import("../../components/Auth/Auth"));
 
 const AuthPage = () => {
   return (
     <div>
-        <Auth/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Auth />
+      </Suspense>
     </div>
-  )
-}
+  );
+};
 
-export default AuthPage
+export default AuthPage;
