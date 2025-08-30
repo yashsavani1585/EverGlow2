@@ -1,50 +1,45 @@
 import React from "react";
 import mainImage from "../../assets/EverGlowOffer1.png";
-import elegantRing from "../../assets/EverGlowOffer2.png"; 
+import elegantRing from "../../assets/EverGlowOffer2.png";
 import diamondRing from "../../assets/EverGlowOffer3.png";
 
 const LatestOffers = () => {
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12">
+    <section className="w-full bg-white py-6 px-2 sm:px-6 md:px-12">
       {/* Heading */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold text-yellow-700">
+      <div className="text-center mb-6">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold text-black">
           LATEST OFFERS
         </h2>
       </div>
 
-      {/* Grid Layout */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Flex Layout - Always Side by Side */}
+      <div className="max-w-7xl mx-auto flex flex-row gap-3 sm:gap-6">
         
         {/* Left Big Image */}
-        <div className="overflow-hidden rounded-lg">
+        <div className="flex-1">
           <img
             src={mainImage}
             alt="New Jewelry Collection"
-            className="w-full h-[513px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+            className="w-full h-[180px] xs:h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
           />
         </div>
 
         {/* Right Two Small Images */}
-        <div className="flex flex-col gap-8">
-          
+        <div className="flex-1 flex flex-col gap-3 sm:gap-6">
           {/* Top */}
-          <div className="overflow-hidden rounded-lg">
-            <img
-              src={elegantRing}
-              alt="Elegant Jewellery"
-              className="w-full h-[240px] object-fill rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
-            />
-          </div>
+          <img
+            src={elegantRing}
+            alt="Elegant Jewellery"
+            className="w-full h-[80px] xs:h-[110px] sm:h-[150px] md:h-[190px] lg:h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+          />
 
           {/* Bottom */}
-          <div className="overflow-hidden rounded-lg">
-            <img
-              src={diamondRing}
-              alt="Diamond Rings"
-              className="w-full h-[240px] object-fill rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
-            />
-          </div>
+          <img
+            src={diamondRing}
+            alt="Diamond Rings"
+            className="w-full h-[80px] xs:h-[110px] sm:h-[150px] md:h-[190px] lg:h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+          />
         </div>
       </div>
     </section>

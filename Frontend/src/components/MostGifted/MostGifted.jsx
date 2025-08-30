@@ -369,7 +369,7 @@ const MostGifted = () => {
         </h2>
 
         {/* ===== Row 1: Image | Text | Image ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center mb-10 sm:mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center mb-1">
           {/* Left Image */}
           <figure className="w-full">
             <img

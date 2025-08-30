@@ -5,12 +5,12 @@ import React from 'react';
 // Main component for the Newsletter Subscription section
 const Newsletter = () => {
   return (
-    <section className="w-full bg-white pt-1 sm:pt-2 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white pt-5 sm:pt-2 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 m-4">
       <div className="max-w-2xl mx-auto text-center">
 
         {/* Heading */}
         <h2
-          className="text-4xl sm:text-5xl font-serif text-yellow-700"
+          className="text-4xl sm:text-5xl font-serif text-black"
           style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}
         >
           Subscribe to Our Newsletter
@@ -45,7 +45,7 @@ const Newsletter = () => {
           <input
             type="checkbox"
             id="privacy"
-            className="h-4 w-4 text-yellow-700 border-gray-300 rounded focus:ring-yellow-700"
+            className="h-4 w-4 text-black border-gray-300 rounded focus:ring-yellow-700"
           />
           <label htmlFor="privacy" className="ml-5 text-sm text-gray-600">
             I agree to the Privacy Policy.

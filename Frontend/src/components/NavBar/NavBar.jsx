@@ -126,7 +126,7 @@ const NavBar = ({ onLinkClick, mobile = false }) => {
   }, [hoverTimeout]);
 
   return (
-    <nav className="w-full text-[#CEBB98] font-medium">
+    <nav className="w-full text-black font-medium">
       {/* Desktop Navbar */}
       {!mobile && (
         <div className="flex justify-center items-center space-x-12 p-4 md:px-10">

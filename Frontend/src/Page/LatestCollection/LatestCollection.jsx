@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from "react";
 
 // Lazy load components
-const HeroSection2 = lazy(() =>
-  import("../../components/HeroSection2/HeroSection2")
+const HeroSection5 = lazy(() =>
+  import("../../components/HeroSection5/HeroSection5")
 );
 const JewelryShowcase = lazy(() =>
   import("../../components/JewelryShowcase/JewelryShowcase")
@@ -12,7 +12,7 @@ const LatestCollection = () => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <HeroSection2 />
+        <HeroSection5 />
         <JewelryShowcase />
       </Suspense>
     </div>

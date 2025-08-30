@@ -690,14 +690,14 @@ import new2 from "../../assets/EverglowPost2.png";
 import new3 from "../../assets/EverglowPost3.png";
 import new4 from "../../assets/EverglowPost4.png";
 
-import PromotionalBanner from "../../assets/productAds1.png";
+import PromotionalBanner from "../../assets/productAds0.png";
 import ProductCard from "../ProductCard/ProductCard";
 
 /* 🔹 DiscoverBlock */
 const DiscoverBlock = ({ title, subtitle, buttonText }) => (
   <div className="flex flex-col justify-center items-start max-w-[220px]">
     <p className="text-gray-600 text-sm font-medium">{title}</p>
-    <h3 className="text-lg sm:text-xl md:text-2xl text-gray-900 font-semibold leading-snug my-2 uppercase tracking-wide">
+    <h3 className="text-lg sm:text-xl md:text-2xl text-gray-900 font-semibold leading-snug my-2 uppercase tracking-wide whitespace-nowrap">
       {subtitle}
     </h3>
     <button className="border border-gray-700 text-gray-800 font-medium py-2 px-6 mt-4 text-sm uppercase tracking-wide rounded-lg transition-colors hover:bg-gray-900 hover:text-white">
@@ -949,24 +949,25 @@ const JewelryShowcase = () => {
 
       {/* 🔹 New Collection */}
       <section className="bg-white py-12">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Title */}
           <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-12 tracking-wide uppercase">
             New Collection
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* Left */}
+            {/* ===== Left Column ===== */}
             <div className="flex flex-col gap-10">
-              {/* Top Image */}
+              {/* Top Large Image */}
               <img
                 src={new1}
                 alt="Jewelry"
-                className="w-full h-auto object-cover shadow-lg rounded-xl"
+                className="w-full h-[465px] object-cover shadow-md rounded-lg"
               />
 
-              {/* Bottom Section: DiscoverBlock + Image */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-10">
-                {/* Discover Block */}
+              {/* Bottom Section: Discover Block + Image */}
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                {/* Discover Block (Text + Button) */}
                 <div className="flex-1 w-full">
                   <DiscoverBlock
                     title="Jewelry Tells"
@@ -975,26 +976,44 @@ const JewelryShowcase = () => {
                   />
                 </div>
 
-                {/* Image */}
+                {/* Small Image */}
                 <img
                   src={new3}
                   alt="Bracelet"
-                  className="w-full sm:w-1/2 h-auto object-cover shadow-lg rounded-xl"
+                  className="w-full  h-[465px] object-cover shadow-md rounded-lg"
                 />
               </div>
             </div>
 
-
-            {/* Right */}
+            {/* ===== Right Column ===== */}
             <div className="flex flex-col gap-10">
+              {/* Top Section: Image + Discover Text */}
               <div className="flex flex-col sm:flex-row items-center gap-6">
-                <img src={new2} alt="Bracelet" className="w-full sm:w-1/2 object-cover shadow-lg rounded-xl" />
-                <DiscoverBlock title="Discover" subtitle="New Arrivals" buttonText="Discover more" />
+                {/* Image */}
+                <img
+                  src={new2}
+                  alt="Bracelet"
+                  className="w-full  h-[465px] object-cover shadow-md rounded-lg"
+
+                />
+                {/* Discover Text Block */}
+                <DiscoverBlock
+                  title="Discover"
+                  subtitle="New Arrivals"
+                  buttonText="Discover more"
+                />
               </div>
-              <img src={new4} alt="Pendant" className="w-full h-auto object-cover shadow-lg rounded-xl" />
+
+              {/* Bottom Large Image */}
+              <img
+                src={new4}
+                alt="Pendant"
+                className="w-full h-[465px] object-cover shadow-md rounded-lg"
+              />
             </div>
           </div>
         </div>
+
       </section>
 
       {/* 🔹 Next 8 Products */}

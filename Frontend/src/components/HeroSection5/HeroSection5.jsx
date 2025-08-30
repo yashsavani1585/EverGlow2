@@ -1,7 +1,7 @@
 import React from "react";
-import heroSection from "../../assets/HeroSection3.png";
+import heroSection from "../../assets/HeroSection5.png";
 
-const HeroSection3 = () => {
+const HeroSection5 = () => {
   return (
     <section
       className="
@@ -17,4 +17,4 @@ const HeroSection3 = () => {
   );
 };
 
-export default HeroSection3;
+export default HeroSection5;

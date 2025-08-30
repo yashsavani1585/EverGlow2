@@ -648,8 +648,8 @@ import leftImg from "../../assets/testimonial-left.png";
 import rightImg from "../../assets/testimonial-right.png";
 
 const reviews = [
-  "Beautiful Jewellery and amazing Quality! I would definitely purchase more!",
-  "Amazing designs and excellent customer service. Highly recommended!",
+  "The design is elegant and build quality feels really sturdy!",
+  "The service was quick and the packaging came neat and safe!",
   "The quality is top-notch and delivery was super fast. Loved it!"
 ];
 
@@ -664,94 +664,113 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen min-w-[99] p-6 sm:p-8 lg:p-12 overflow-hidden overflow-x-hidden bg-[#CEBB98] font-['Inter']">
-      {/* Grid Lines */}
-      <div className="absolute top-[20%] left-0 h-px w-[90%] bg-white hidden sm:block"></div>
-      <div className="absolute bottom-[20%] left-25 h-px w-full bg-white hidden sm:block"></div>
-      <div className="absolute top-36 left-[22%] w-px h-full bg-white hidden md:block"></div>
-      <div className="absolute bottom-36 right-[22%] w-px h-full bg-white hidden md:block"></div>
+    <>
+      <div className="text-center pt-16 pb-8 bg-white">
+        <h1
+          className="text-4xl md:text-5xl font-bold text-black"
+          style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}
+        >
+          Customer Testimonials
+        </h1>
+        <p className="text-lg md:text-xl mt-2 font-bold text-gray-600">
+          See what our clients have to say
+        </p>
+      </div>
+      <section className="relative flex flex-col items-center justify-center min-h-screen w-full p-6 sm:p-8 lg:p-12 overflow-hidden bg-[#CEBB98] font-['Inter']">
 
-      {/* Decorative Stars */}
-      <svg
-        className="absolute top-8 left-8 w-12 h-12 text-white sm:w-16 sm:h-16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-      >
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
+        {/* ==== GRID LINES (only desktop) ==== */}
+        <div className="hidden lg:block absolute top-[20%] left-0 h-px w-[90%] bg-black"></div>
+        <div className="hidden lg:block absolute bottom-[20%] left-0 h-px w-full bg-black"></div>
+        <div className="hidden lg:block absolute top-36  left-[22%] w-px h-full bg-black"></div>
+        <div className="hidden lg:block absolute  bottom-36 right-[22%] w-px h-full bg-black"></div>
 
-      <svg
-        className="absolute bottom-16 right-16 w-8 h-8 text-white sm:w-12 sm:h-12"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-      >
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
+        {/* ==== Decorative Stars ==== */}
+        <svg
+          className="absolute top-8 left-8 w-12 h-12 text-white sm:w-16 sm:h-16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        >
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-50 py-10 sm:py-16 gap-10 w-full">
-        {/* Images for small screens */}
-        <div className="flex flex-col items-center justify-center gap-6 md:hidden">
-          <img
-            src={leftImg}
-            alt="Customer Left"
-            className="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 object-cover rounded-md shadow-2xl border-2 border-white"
-          />
-          <blockquote className="block md:hidden max-w-3xl px-4 sm:px-6">
-            <p className="text-white text-xl sm:text-2xl font-serif leading-relaxed font-semibold">
+        <svg
+          className="absolute bottom-16 right-16 w-8 h-8 text-white sm:w-12 sm:h-12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        >
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+
+        {/* ==== Main Content ==== */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-10 sm:py-16 w-full">
+
+          {/* ==== MOBILE/TABLET LAYOUT ==== */}
+          <div className="flex flex-col items-center gap-6 lg:hidden">
+            <img
+              src={leftImg}
+              alt="Customer Left"
+              className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-md shadow-2xl border-2 border-white"
+            />
+
+            <blockquote className="max-w-2xl px-4">
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-serif leading-relaxed font-semibold">
+                {reviews[currentReview]}
+              </p>
+            </blockquote>
+
+            <img
+              src={rightImg}
+              alt="Customer Right"
+              className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-md shadow-2xl border-2 border-white"
+            />
+          </div>
+
+          {/* ==== DESKTOP QUOTE ==== */}
+          <blockquote className="hidden lg:block max-w-3xl px-6">
+            <p className="text-white text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed font-semibold">
               {reviews[currentReview]}
             </p>
           </blockquote>
-          <img
-            src={rightImg}
-            alt="Customer Right"
-            className="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 object-cover rounded-md shadow-2xl border-2 border-white"
-          />
-        </div>
 
-        {/* Quote */}
-        <blockquote className=" hidden md:block max-w-3xl px-4 sm:px-6">
-          <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed font-semibold">
-            {reviews[currentReview]}
-          </p>
-        </blockquote>
-
-        {/* Desktop Images */}
-        <div className="hidden md:block">
-          {/* Left Image */}
-          <div className="absolute left-0 bottom-0 transform -translate-x-1/2 translate-y-1/2 sm:left-[10%] lg:left-[15%] sm:bottom-[25%] lg:bottom-[30%]">
-            <img
-              src={leftImg}
-              alt="Customer"
-              className="w-28 h-28 sm:w-36 sm:h-36 md:mt-70 ml-40  lg:w-40 lg:h-40 object-cover rounded-md shadow-2xl border-2 border-white"
-            />
+          {/* ==== DESKTOP FLOATING IMAGES ==== */}
+          <div className="hidden lg:block">
+            {/* Left Image */}
+            <div className="absolute left-[20%] -bottom-[55%] translate-x-[-50%]">
+              <img
+                src={leftImg}
+                alt="Customer Left"
+                className="w-28 h-28 lg:w-36 lg:h-36 object-cover rounded-md shadow-2xl border-2 border-white"
+              />
+            </div>
+            {/* Right Image */}
+            <div className="absolute right-[20%] -top-[55%] translate-x-[50%]">
+              <img
+                src={rightImg}
+                alt="Customer Right"
+                className="w-28 h-28 lg:w-36 lg:h-36 object-cover rounded-md shadow-2xl border-2 border-white"
+              />
+            </div>
           </div>
-          {/* Right Image */}
-          <div className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/2 sm:right-[10%] lg:right-[15%] sm:top-[20%] lg:top-[15%]">
-            <img
-              src={rightImg}
-              alt="Customer"
-              className="w-28 h-28 sm:w-36 sm:h-36 md:mb-40 mr-40 lg:w-40 lg:h-40 object-cover rounded-md shadow-2xl border-2 border-white"
-            />
+
+          {/* ==== DOTS ==== */}
+          <div className="flex gap-2 justify-center mt-6">
+            {reviews.map((_, index) => (
+              <span
+                key={index}
+                className={`w-2 h-2 rounded-full ${currentReview === index
+                    ? "bg-white"
+                    : "bg-white opacity-50"
+                  }`}
+              ></span>
+            ))}
           </div>
         </div>
-
-        {/* Dots */}
-        <div className="flex gap-2 justify-center mt-6">
-          {reviews.map((_, index) => (
-            <span
-              key={index}
-              className={`w-2 h-2 rounded-full ${currentReview === index ? "bg-white" : "bg-white opacity-50"
-                }`}
-            ></span>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
