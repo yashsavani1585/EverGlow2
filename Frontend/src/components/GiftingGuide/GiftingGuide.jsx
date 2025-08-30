@@ -61,7 +61,7 @@ const gifts = [
 
 const GiftingGuide = () => {
     return (
-        <section className="w-full bg-white py-0 px-1 md:px-9 m-5">
+        <section className="w-full bg-white py-0 px-1 md:px-9 ">
             {/* Heading */}
             <div className="text-center mb-6">
                 <h2 className="text-3xl md:text-4xl font-semibold text-black">

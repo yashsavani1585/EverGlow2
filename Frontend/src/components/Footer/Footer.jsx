@@ -315,12 +315,12 @@ import logoUrl from "../../assets/EverGlow2.png";
 export default function Footer() {
   return (
     <footer
-      className="text-black py-8 sm:py-10 px-4 sm:px-6 bg-cover bg-center text-xs sm:text-sm"
+      className="text-black py-8 sm:py-10 px-4 sm:px-6 bg-cover bg-center text-1xl sm:text-1xl md:text-1xl lg:text-1xl"
       style={{ backgroundImage: `url(${bgurl})` }}
     >
       {/* Main Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 text-center md:text-left">
-        
+
         {/* 1. About + Logo + Social */}
         <div className="flex flex-col items-center md:items-start">
           <div className="w-[190px] h-[80px] flex items-center justify-center">
@@ -330,8 +330,8 @@ export default function Footer() {
               className="w-[250%] h-[300%] object-contain bg-transparent mix-blend-normal"
             />
           </div>
-          <p className="text-[11px] sm:text-xs leading-relaxed mb-3 max-w-[220px]">
-            At EverGlow, we believe that Jewellery is more than adornment.
+          <p className="text-1xl sm:text-1xl leading-relaxed mb-3 max-w-[220px]">
+            At  we believe that Jewellery is more than adornment.
             Founded in 2023, our passion for quality drives us to create unique
             pieces.
           </p>
@@ -417,7 +417,7 @@ export default function Footer() {
         {/* 5. Newsletter */}
         <div className="flex flex-col items-center md:items-start">
           <h3 className="uppercase text-[10px] sm:text-xs tracking-widest mb-1">Newsletter</h3>
-          <p className="text-lg sm:text-xl font-serif mb-4">Join Today</p>
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-serif mb-4 text-nowrap">Join Today</h2>
 
           <form className="flex items-center w-full max-w-[220px] sm:max-w-xs border border-black rounded-full overflow-hidden">
             <input
@@ -427,7 +427,7 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 mr-1 m-1 rounded-full bg-white text-black  hover:text-white transition"
+              className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 mr-1 m-1 rounded-full bg-black text-white  hover:text-white transition"
             >
               <IoIosArrowForward size={16} />
             </button>

@@ -1893,6 +1893,14 @@ const OrderConfirm = () => {
                                 <button className="text-black font-medium text-sm hover:underline">Add</button>
                             </div>
 
+                            <div className="mb-6 flex items-center justify-between border rounded-md px-3 py-2 bg-gray-50">
+                                <div className="flex items-center text-sm text-gray-700">
+                                    <FaGift className="text-gray-500 mr-2" />
+                                    <span>Cuppon Code Apply (Optional)</span>
+                                </div>
+                                <button className="text-black font-medium text-sm hover:underline">Apply</button>
+                            </div>
+
                             <button
                                 type="button"
                                 onClick={handlePayment}

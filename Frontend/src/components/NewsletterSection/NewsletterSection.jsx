@@ -1,35 +1,33 @@
-
-
 import React from 'react';
 
 // Main component for the Newsletter Subscription section
 const Newsletter = () => {
   return (
-    <section className="w-full bg-white pt-5 sm:pt-2 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 m-4">
+    <section className="w-full bg-white  mb-4 sm:py-16 px-4 sm:px-4 lg:px-8">
       <div className="max-w-2xl mx-auto text-center">
 
         {/* Heading */}
         <h2
-          className="text-4xl sm:text-5xl font-serif text-black"
+          className="text-3xl sm:text-4xl font-serif text-black"
           style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}
         >
           Subscribe to Our Newsletter
         </h2>
 
         {/* Subheading */}
-        <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
+        <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
           Sign up to our newsletter for information on sales, delightful content and new additions to the collection
         </p>
 
         {/* Form */}
-        <form className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <form className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
           <div className="w-full sm:w-auto flex-grow">
             <label htmlFor="email" className="sr-only">Enter your email</label>
             <input
               type="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full px-5 py-3 bg-gray-100 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:border-transparent"
+              className="w-full px-5 py-3 bg-gray-100 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
             />
           </div>
           <button
@@ -41,13 +39,13 @@ const Newsletter = () => {
         </form>
 
         {/* Privacy Policy Checkbox */}
-        <div className="mt-6 flex items-center justify-start">
+        <div className="mt-4 flex items-center justify-start">
           <input
             type="checkbox"
             id="privacy"
-            className="h-4 w-4 text-black border-gray-300 rounded focus:ring-yellow-700"
+            className="h-4 w-4 text-black border-gray-300 rounded focus:ring-black"
           />
-          <label htmlFor="privacy" className="ml-5 text-sm text-gray-600">
+          <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
             I agree to the Privacy Policy.
           </label>
         </div>

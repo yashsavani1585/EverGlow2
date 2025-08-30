@@ -5,7 +5,7 @@ import diamondRing from "../../assets/EverGlowOffer3.png";
 
 const LatestOffers = () => {
   return (
-    <section className="w-full bg-white py-6 px-2 sm:px-6 md:px-12">
+    <section className="w-full bg-white py-6 px-2 mt-4 sm:px-6 md:px-12">
       {/* Heading */}
       <div className="text-center mb-6">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold text-black">
@@ -26,19 +26,19 @@ const LatestOffers = () => {
         </div>
 
         {/* Right Two Small Images */}
-        <div className="flex-1 flex flex-col gap-3 sm:gap-6">
+        <div className="flex-1 flex flex-col gap-3 sm:gap-3">
           {/* Top */}
           <img
             src={elegantRing}
             alt="Elegant Jewellery"
-            className="w-full h-[80px] xs:h-[110px] sm:h-[150px] md:h-[190px] lg:h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+            className="w-full h-[80px] xs:h-[110px] sm:h-[190px] md:h-[190px] lg:h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
           />
 
           {/* Bottom */}
           <img
             src={diamondRing}
             alt="Diamond Rings"
-            className="w-full h-[80px] xs:h-[110px] sm:h-[150px] md:h-[190px] lg:h-[240px] object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
+            className="w-full h-[80px] xs:h-[110px] sm:h-[160px] md:h-[190px] lg:h-[240px] mt-1 object-cover rounded-lg transition-transform duration-500 hover:scale-105 cursor-pointer"
           />
         </div>
       </div>

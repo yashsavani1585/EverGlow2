@@ -665,7 +665,7 @@ const TestimonialSection = () => {
 
   return (
     <>
-      <div className="text-center pt-16 pb-8 bg-white">
+      <div className="text-center pt-1 pb-2 bg-white">
         <h1
           className="text-4xl md:text-5xl font-bold text-black"
           style={{ fontFamily: "'Garamond', 'Times New Roman', serif" }}

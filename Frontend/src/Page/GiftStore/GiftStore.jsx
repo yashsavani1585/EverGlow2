@@ -18,9 +18,12 @@ const GiftStore = () => {
         <HeroSection2 />
       </Suspense>
 
-      <Suspense fallback={<LoadingFallback />}>
-        <GiftingGuide />
-      </Suspense>
+      <div className="mt-12 sm:mt-20">
+        <Suspense fallback={<LoadingFallback />}>
+          <GiftingGuide />
+        </Suspense>
+      </div>
+
 
       <Suspense fallback={<LoadingFallback />}>
         <MostGifted />

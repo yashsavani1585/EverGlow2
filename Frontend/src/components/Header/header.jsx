@@ -1246,7 +1246,7 @@ const Header = () => {
                 sm:max-w-[200px] sm:h-8
                 md:max-w-md md:h-10
                 lg:max-w-xl lg:h-12
-                border border-yellow-700 rounded-lg
+                border border-black rounded-lg
                 overflow-hidden bg-white cursor-text"
             >
               <input
@@ -1263,7 +1263,7 @@ const Header = () => {
               />
               <button
                 className="flex items-center justify-center px-2
-                           text-yellow-700 hover:text-yellow-900 transition-colors
+                           text-black hover:text-yellow-900 transition-colors
                            bg-transparent border-none"
               >
                 <FaSearch className="text-xs sm:text-sm md:text-base" />
