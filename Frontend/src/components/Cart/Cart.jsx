@@ -981,38 +981,39 @@
 
 // export default Cart;
 
-import React, { useState } from "react";
+import React, { useMemo } from "react";
+import { useCart } from "../../context/cartContext";
 import { FaTrash, FaHeart, FaCheckCircle, FaGift } from "react-icons/fa";
-import ringImage from "../../assets/Rings.png";
 import emptyCartImg from "../../assets/Empty.png";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const [products] = useState([
-    {
-      id: 1,
-      name: "The Avila Ring",
-      code: "078883-29653831",
-      oldPrice: "₹24,231",
-      price: "₹23,155",
-      offer: "10% OFF ON DIAMOND PRICE",
-      metal: "18Kt Gold, 1.23 gram",
-      stone: "14 Diamond, 0.0840 Carat, SI IJ",
-      image: ringImage,
-    },
-    {
-      id: 2,
-      name: "Elegant Diamond Ring",
-      code: "092773-18572943",
-      oldPrice: "₹30,000",
-      price: "₹28,500",
-      offer: "15% OFF ON MAKING CHARGES",
-      metal: "18Kt Gold, 2.10 gram",
-      stone: "20 Diamond, 0.120 Carat, VS IJ",
-      image: ringImage,
-    },
-  ]);
+  // ---- functional wiring from your 2nd code ----
+  const { items, update, remove, moveToWishlist } = useCart();
+  const products = items || [];
 
+  const formatIN = (n) => Number(n ?? 0).toLocaleString("en-IN");
+
+  const itemPrice = (p) => p?.product?.discountPrice ?? p?.product?.price ?? 0;
+  const itemOldPrice = (p) => (p?.product?.discountPrice ? p?.product?.price : null);
+
+  const lineSave = (p) => {
+    const mrp = itemOldPrice(p) || 0;
+    const price = itemPrice(p) || 0;
+    const qty = Number(p?.qty || 0);
+    return mrp > price ? (mrp - price) * qty : 0;
+  };
+
+  const total = useMemo(
+    () => products.reduce((s, p) => s + itemPrice(p) * Number(p?.qty || 0), 0),
+    [products]
+  );
+  const totalSavings = useMemo(
+    () => products.reduce((s, p) => s + lineSave(p), 0),
+    [products]
+  );
+
+  // ---- UI bits carried from your first design ----
   const renderFeatures = () => (
     <div className="border bg-gray-50 rounded-md px-4 py-3 mt-4">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-6">
@@ -1022,11 +1023,11 @@ const Cart = () => {
         </div>
         <div className="flex items-center text-gray-700 text-sm md:text-base">
           <FaCheckCircle className="text-gray-500 mr-2 text-lg" />
-          <span>Eligible for Lifetime exchange & Buy back</span>
+          <span>Eligible for Lifetime exchange &amp; Buy back</span>
         </div>
         <div className="flex items-center text-gray-700 text-sm md:text-base">
           <FaCheckCircle className="text-gray-500 mr-2 text-lg" />
-          <span>Free & Insured Delivery</span>
+          <span>Free &amp; Insured Delivery</span>
         </div>
       </div>
     </div>
@@ -1036,7 +1037,7 @@ const Cart = () => {
     <div className="bg-white min-h-screen py-8 px-4 md:px-10">
       <div className="max-w-7xl mx-auto lg:flex lg:gap-8">
         {products.length === 0 ? (
-          // Empty Cart
+          // -------- Empty Cart --------
           <div className="flex flex-col items-center justify-center py-20 text-center space-y-6 w-full">
             <img
               src={emptyCartImg}
@@ -1065,115 +1066,154 @@ const Cart = () => {
                 <span className="text-gray-500">({products.length} Items)</span>
               </h2>
 
-              {products.map((product) => (
-                <div
-                  key={product.id}
-                  className="p-4 w-full border rounded-lg shadow-sm"
-                >
-                  <div className="flex flex-col md:flex-row gap-4">
-                    {/* Product Image */}
-                    <div className="w-full md:w-[25%]">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-48 md:h-full object-cover rounded-lg border"
-                        loading="lazy"
-                      />
-                    </div>
+              {products.map((cartItem) => {
+                const prod = cartItem?.product || {};
+                const specs = prod?.specs || {};
+                const purity = prod?.purity || "14k Yellow Gold";
 
-                    {/* Product Details */}
-                    <div className="flex-1 bg-white flex flex-col">
-                      <div className="p-2 sm:p-4 flex-1">
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                          <div>
-                            <h3 className="text-base md:text-lg font-semibold text-gray-800">
-                              {product.name}
-                            </h3>
-                            <p className="text-xs md:text-sm text-gray-500 mt-1">
-                              Product Code: {product.code}
-                            </p>
+                // color from row (or from key portion "id:rose-gold")
+                const colorFromKey = cartItem?.key?.split(":")[1];
+                const color =
+                  cartItem?.color ||
+                  (colorFromKey && colorFromKey !== "-" ? colorFromKey : null);
+
+                // pricing
+                const mrp = itemOldPrice(cartItem);
+                const price = itemPrice(cartItem);
+                const pct = mrp ? Math.round(((mrp - price) / (mrp || 1)) * 100) : 0;
+
+                // metal & stone text
+                const metalText = [purity, specs?.productWeight].filter(Boolean).join(", ");
+                const stoneText = [
+                  specs?.numberOfDiamonds ? `${specs.numberOfDiamonds} Diamonds` : null,
+                  specs?.diamondCarat ? `${specs.diamondCarat} Carat` : null,
+                ]
+                  .filter(Boolean)
+                  .join(", ");
+
+                return (
+                  <div key={cartItem.id || cartItem.key} className="p-4 w-full border rounded-lg shadow-sm">
+                    <div className="flex flex-col md:flex-row gap-4">
+                      {/* Product Image */}
+                      <div className="w-full md:w-[25%]">
+                        <img
+                          src={
+                            Array.isArray(prod?.image) && prod.image[0]
+                              ? prod.image[0]
+                              : prod?.thumbnail || prod?.image || ""
+                          }
+                          alt={prod?.name || "Product"}
+                          className="w-full h-48 md:h-full object-cover rounded-lg border"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      {/* Product Details */}
+                      <div className="flex-1 bg-white flex flex-col">
+                        <div className="p-2 sm:p-4 flex-1">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                            <div>
+                              <h3 className="text-base md:text-lg font-semibold text-gray-800">
+                                {prod?.name || "—"}
+                                {color ? (
+                                  <span className="ml-2 text-xs text-gray-500">({color})</span>
+                                ) : null}
+                              </h3>
+                              {/* show a code if available */}
+                              {prod?._id || prod?.sku ? (
+                                <p className="text-xs md:text-sm text-gray-500 mt-1">
+                                  Product Code: {prod?.sku || prod?._id}
+                                </p>
+                              ) : null}
+                            </div>
+                            <div className="text-left sm:text-right">
+                              <p className="text-xs text-gray-400 line-through">
+                                {mrp ? `₹${formatIN(mrp)}` : ""}
+                              </p>
+                              <p className="text-lg font-semibold text-gray-900">
+                                ₹{formatIN(price)}
+                              </p>
+                              <p className="text-xs text-gray-500 mt-1">
+                                {mrp ? `${pct}% OFF` : ""}
+                              </p>
+                            </div>
                           </div>
-                          <div className="text-left sm:text-right">
-                            <p className="text-xs text-gray-400 line-through">
-                              {product.oldPrice}
-                            </p>
-                            <p className="text-lg font-semibold text-gray-900">
-                              {product.price}
-                            </p>
-                            <p className="text-xs text-gray-500 mt-1">
-                              ({product.offer})
-                            </p>
+
+                          <p className="text-xs sm:text-sm text-red-600 mt-2">
+                            <span className="font-semibold">%</span> Upto 30% off on
+                            Making Charges above Rs. 75,000 order value
+                          </p>
+
+                          {/* Responsive Info Section (kept from design 1) */}
+                          <div className="mt-4 border rounded-md text-xs sm:text-sm text-gray-700">
+                            {/* Ring Size & Quantity */}
+                            <div className="flex flex-col sm:flex-row">
+                              <div className="flex items-center flex-1 border-b sm:border-b-0">
+                                <span className="bg-gray-100 px-3 py-2 w-28 shrink-0">
+                                  Ring Size
+                                </span>
+                                {/* UI only (your note says size is set on cart page; keep it local) */}
+                                <select className="flex-1 px-2 py-2 border-l border-gray-200 focus:outline-none" defaultValue="9">
+                                  <option>9</option>
+                                  <option>10</option>
+                                  <option>11</option>
+                                </select>
+                              </div>
+                              <div className="flex items-center flex-1 border-t sm:border-t-0 sm:border-l border-gray-200">
+                                <span className="px-3 py-2 w-24 shrink-0">Quantity</span>
+                                <select
+                                  className="flex-1 px-2 py-2 border-l border-gray-200 focus:outline-none"
+                                  value={cartItem?.qty || 1}
+                                  onChange={(e) => update(cartItem.key, Number(e.target.value))}
+                                >
+                                  {[1,2,3,4,5,6,7,8,9,10].map((n) => (
+                                    <option key={n} value={n}>{n}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+
+                            {/* Metal */}
+                            <div className="flex flex-col sm:flex-row border-t">
+                              <span className="bg-gray-100 px-3 py-2 w-28 shrink-0">Metal</span>
+                              <span className="px-3 py-2 flex-1">{metalText || "—"}</span>
+                            </div>
+
+                            {/* Stone */}
+                            <div className="flex flex-col sm:flex-row border-t">
+                              <span className="bg-gray-100 px-3 py-2 w-28 shrink-0">Stone</span>
+                              <span className="px-3 py-2 flex-1">{stoneText || "—"}</span>
+                            </div>
                           </div>
                         </div>
 
-                        <p className="text-xs sm:text-sm text-red-600 mt-2">
-                          <span className="font-semibold">%</span> Upto 30% off on
-                          Making Charges above Rs. 75,000 order value
-                        </p>
-
-                        {/* Responsive Info Section */}
-                        <div className="mt-4 border rounded-md text-xs sm:text-sm text-gray-700">
-                          {/* Ring Size & Quantity */}
-                          <div className="flex flex-col sm:flex-row">
-                            <div className="flex items-center flex-1 border-b sm:border-b-0">
-                              <span className="bg-gray-100 px-3 py-2 w-28 shrink-0">
-                                Ring Size
-                              </span>
-                              <select className="flex-1 px-2 py-2 border-l border-gray-200 focus:outline-none">
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                              </select>
-                            </div>
-                            <div className="flex items-center flex-1 border-t sm:border-t-0 sm:border-l border-gray-200">
-                              <span className="px-3 py-2 w-24 shrink-0">Quantity</span>
-                              <select className="flex-1 px-2 py-2 border-l border-gray-200 focus:outline-none">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          {/* Metal */}
-                          <div className="flex flex-col sm:flex-row border-t">
-                            <span className="bg-gray-100 px-3 py-2 w-28 shrink-0">
-                              Metal
+                        {/* Buttons */}
+                        <div className="border-t flex flex-col sm:flex-row text-xs sm:text-sm">
+                          <button
+                            onClick={() => remove(cartItem.key)}
+                            className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-red-600 font-medium"
+                          >
+                            <FaTrash /> REMOVE
+                          </button>
+                          <button
+                            onClick={() => moveToWishlist(cartItem.key)}
+                            className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-red-600 font-medium border-t sm:border-t-0 sm:border-l"
+                          >
+                            <FaHeart /> MOVE TO WISHLIST
+                            <span className="hidden sm:inline text-xs text-gray-500">
+                              (Need login first)
                             </span>
-                            <span className="px-3 py-2 flex-1">{product.metal}</span>
-                          </div>
-
-                          {/* Stone */}
-                          <div className="flex flex-col sm:flex-row border-t">
-                            <span className="bg-gray-100 px-3 py-2 w-28 shrink-0">
-                              Stone
-                            </span>
-                            <span className="px-3 py-2 flex-1">{product.stone}</span>
-                          </div>
+                          </button>
                         </div>
                       </div>
-
-                      {/* Buttons */}
-                      <div className="border-t flex flex-col sm:flex-row text-xs sm:text-sm">
-                        <button className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-red-600 font-medium">
-                          <FaTrash /> REMOVE
-                        </button>
-                        <button className="flex items-center justify-center gap-2 flex-1 py-3 text-gray-700 hover:text-red-600 font-medium border-t sm:border-t-0 sm:border-l">
-                          <FaHeart /> MOVE TO WISHLIST
-                          <span className="hidden sm:inline text-xs text-gray-500">
-                            (Need login first)
-                          </span>
-                        </button>
-                      </div>
                     </div>
+                    {renderFeatures()}
                   </div>
-                  {renderFeatures()}
-                </div>
-              ))}
+                );
+              })}
             </div>
 
-                <div className="w-px bg-gray-300 hidden lg:block"></div>
+            <div className="w-px bg-gray-300 hidden lg:block"></div>
 
             {/* ---------------- RIGHT SECTION ---------------- */}
             <div className="lg:w-[350px] w-full mt-6 lg:mt-0">
@@ -1183,14 +1223,23 @@ const Cart = () => {
                 </h3>
                 <div className="flex justify-between text-sm text-gray-700 mb-2">
                   <span>Total ({products.length} Items)</span>
-                  <span>₹51,655</span>
+                  <span>₹{formatIN(total)}</span>
                 </div>
                 <div className="border-t border-dotted border-gray-400 my-4"></div>
                 <div className="flex justify-between font-medium text-gray-900 mb-2">
                   <span>Total Payable</span>
-                  <span>₹51,655</span>
+                  <span>₹{formatIN(total)}</span>
                 </div>
-                <p className="text-green-600 text-sm mb-6">You Save ₹2,076</p>
+
+                {/* dynamic savings from real prices */}
+                {totalSavings > 0 ? (
+                  <p className="text-green-600 text-sm mb-6">
+                    You Save ₹{formatIN(totalSavings)}
+                  </p>
+                ) : (
+                  <p className="text-gray-500 text-sm mb-6">&nbsp;</p>
+                )}
+
                 <div className="mb-6 flex items-center justify-between border rounded-md px-3 py-2 bg-gray-50">
                   <div className="flex items-center text-sm text-gray-700">
                     <FaGift className="text-gray-500 mr-2" />
