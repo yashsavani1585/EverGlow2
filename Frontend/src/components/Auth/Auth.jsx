@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   TextField,
@@ -11,9 +10,72 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import AuthLR from "../../assets/Auth.png";
 
+const USER_BASE = "http://localhost:4000/api/user";
+const AUTH_BASE = "http://localhost:4000/api/auth"; 
+
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  // Email / password login
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`${USER_BASE}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: form.email, password: form.password }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem("token", data.token);
+        window.location.href = "/";
+      } else {
+        alert(data.message || "Login failed");
+      }
+    } catch {
+      alert("Login failed");
+    }
+  };
+
+  // Email / password register
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`${USER_BASE}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem("token", data.token);
+        window.location.href = "/";
+      } else {
+        alert(data.message || "Registration failed");
+      }
+    } catch {
+      alert("Registration failed");
+    }
+  };
+
+  // FULL-PAGE REDIRECT to backend -> Google
+  const startGoogleLogin = () => {
+    // Optional: pass where to come back (frontend origin), backend can use this
+    const redirectBackTo = encodeURIComponent(window.location.origin);
+    window.location.href = `${AUTH_BASE}/google?redirect=${redirectBackTo}`;
+  };
 
   const toggleAuth = () => setIsLogin(!isLogin);
 
@@ -62,12 +124,14 @@ const Auth = () => {
             <div className="flex-1 flex flex-col justify-center overflow-y-auto">
               {isLogin ? (
                 /* LOGIN FORM */
-                <form className="space-y-5 pt-6">
+                <form className="space-y-5 pt-6" onSubmit={handleLogin}>
                   <p className="text-xs text-gray-500 leading-snug">
                     For the purpose of industry registration, your details are required and will be stored.
                   </p>
 
-                  <TextField label="E-mail" fullWidth variant="outlined" size="small" />
+                  <TextField label="E-mail" fullWidth variant="outlined" size="small" name="email"
+                    value={form.email}
+                    onChange={handleChange}/>
 
                   <TextField
                     label="Password"
@@ -75,7 +139,11 @@ const Auth = () => {
                     fullWidth
                     variant="outlined"
                     size="small"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
                     sx={{ mt: 2 }}
+                    
                   
                     InputProps={{
                       endAdornment: (
@@ -102,6 +170,7 @@ const Auth = () => {
                   </p>
 
                   <Button
+                    type="submit"
                     variant="contained"
                     fullWidth
                     sx={{
@@ -123,6 +192,7 @@ const Auth = () => {
                   <Button
                     variant="outlined"
                     fullWidth
+                    onClick={startGoogleLogin}
                     startIcon={
                       <img
                         src="https://www.svgrepo.com/show/355037/google.svg"
@@ -153,11 +223,17 @@ const Auth = () => {
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <TextField label="Name" fullWidth variant="outlined" size="small" />
-                    <TextField label="Mobile Number" fullWidth variant="outlined" size="small" />
+                    <TextField label="Name" fullWidth variant="outlined" size="small"  name="name"
+                      value={form.name}
+                      onChange={handleChange}/>
+                    <TextField label="Mobile Number" fullWidth variant="outlined" size="small"  name="phone"
+                      value={form.phone}
+                      onChange={handleChange}/>
                   </div>
 
-                  <TextField label="E-mail" fullWidth variant="outlined" size="small" />
+                  <TextField label="E-mail" fullWidth variant="outlined" size="small" name="email"
+                    value={form.email}
+                    onChange={handleChange}/>
 
                   <TextField
                     label="Password"
@@ -166,6 +242,9 @@ const Auth = () => {
                     variant="outlined"
                     size="small"
                     sx={{ mt: 2 }}
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
@@ -184,6 +263,9 @@ const Auth = () => {
                     variant="outlined"
                     size="small"
                     sx={{ mt: 2 }}
+                    name="confirmPassword"
+                    value={form.confirmPassword}
+                    onChange={handleChange}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
@@ -203,6 +285,7 @@ const Auth = () => {
 
                   <Button
                     variant="contained"
+                    type="submit"
                     fullWidth
                     sx={{
                       backgroundColor: "#CEBB98",
@@ -223,6 +306,7 @@ const Auth = () => {
                   <Button
                     variant="outlined"
                     fullWidth
+                    onClick={startGoogleLogin}
                     startIcon={
                       <img
                         src="https://www.svgrepo.com/show/355037/google.svg"

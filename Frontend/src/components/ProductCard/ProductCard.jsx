@@ -210,9 +210,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
-
+import { useNavigate } from "react-router-dom";
+import { isAuthenticated } from "../../utils/auth";
+import { useCart } from "../../context/cartContext";
 
 const ProductCard = ({ product, imageH = "h-[150px] md:h-[200px]" }) => {
+    const navigate = useNavigate();
+  const { wishHas, wishToggle } = useCart();
+
+  const pid = product?._id || product?.id;
+  const wished = wishHas(pid);   // no color on the card
+
+  const onWish = () => {
+    if (!isAuthenticated()) return navigate("/auth");
+    wishToggle(pid);
+  };
   return (
     <div className="border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition bg-white flex flex-col relative group">
       {/* 🔹 Image with overlay */}
@@ -225,7 +237,7 @@ const ProductCard = ({ product, imageH = "h-[150px] md:h-[200px]" }) => {
           </span>
 
           {/* Wishlist Icon */}
-          <button className="p-2 bg-white rounded-full shadow hover:bg-red-500 transition-colors">
+          <button onClick={onWish} className="p-2 bg-white rounded-full shadow hover:bg-red-500 transition-colors">
             <CiHeart size={16} className="text-black hover:text-white transition-colors" />
           </button>
 
@@ -270,7 +282,7 @@ const ProductCard = ({ product, imageH = "h-[150px] md:h-[200px]" }) => {
         {/* Buttons */}
         <div className="mt-auto flex gap-2">
           {/* More Info Button */}
-          <Link to="/moreinfo2" className="flex-1">
+          <Link to={`/moreinfo2?id=${product.id}`} className="flex-1">
             <button className="w-full border border-[#CEBB98] text-black text-sm font-medium py-2 px-3 rounded-xl hover:bg-purple-50 transition">
               More Info
             </button>

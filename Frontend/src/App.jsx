@@ -28,6 +28,7 @@ import NECKLACEPage from "./Page/NECKLACE/NECKLACEPage";
 import Pendantset from "./Page/Pendantset/Pendantset";
 import WishlistPage from "./Page/WishlistPage/WishlistPage";
 import MoreInfo2 from "./components/MoreInfo2/MoreInfo2";
+import OAuthCallback from "./Page/OAuthCallback";
 
 
 
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/pendantset" element={<Pendantset/>} />
           <Route path="/Wishlist" element={<WishlistPage/>}/>
           <Route path="/moreinfo2" element={<MoreInfo2/>}/>
+          <Route path="/oauth/callback" element={<OAuthCallback />} />
 
 
         </Routes>
