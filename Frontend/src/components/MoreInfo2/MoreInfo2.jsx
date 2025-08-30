@@ -1,93 +1,318 @@
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import axios from "axios";
+import { useCart } from "../../context/cartContext";
+import { isAuthenticated } from "../../utils/auth";
 
-import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/thumbs";
 import { Thumbs, Autoplay } from "swiper/modules";
+
 import InnerImageZoom from "react-inner-image-zoom";
-// import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
-import 'react-inner-image-zoom/lib/styles.min.css';
+import "react-inner-image-zoom/lib/styles.min.css";
 
-
-import img1 from "../../assets/productImg.png";
-import rose1 from "../../assets/EverglowPost1.png";
-import rose2 from "../../assets/EverglowPost2.png";
-import white1 from "../../assets/EverglowPost3.png";
-import white2 from "../../assets/EverglowPost4.png";
+import img1 from "../../assets/productImg.png"; // fallback
 import ProductCard from "../ProductCard/ProductCard";
 
+/* -------------------- helpers -------------------- */
+const normalize = (c) => String(c || "").trim().toLowerCase();
+const formatIN = (n) => Number(n || 0).toLocaleString("en-IN");
+
+// UI chip -> canonical API color
+const mapUiToColor = (v) => {
+  const k = normalize(v);
+  if (k === "rose" || k === "rosegold" || k === "rose-gold") return "rose-gold";
+  if (k === "white" || k === "whitegold" || k === "white-gold") return "white-gold";
+  if (k === "yellow" || k === "gold") return "gold";
+  return k || null;
+};
+
+// canonical API color -> UI chip
+const mapApiToUi = (v) => {
+  const k = normalize(v);
+  if (k === "rose-gold") return "rose";
+  if (k === "white-gold") return "white";
+  return "yellow"; // default to yellow/gold
+};
+
+const CHIP_CLASS = {
+  rose: "bg-[#b76e79]",
+  white: "bg-gray-300",
+  yellow: "bg-yellow-400",
+};
+
+const backendUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+
+/* ================================================== */
 const MoreInfo2 = () => {
-  // Product Variants
-  const productVariants = {
-    rose: {
-      title: "Celestial Grace Earrings - Rose Gold",
-      price: "₹2299",
-      oldPrice: "₹2599",
-      desc: "Rose Gold plated diamond earrings, elegant and timeless design.",
-      images: [rose1, rose2, img1],
-      color: "bg-[#b76e79]", // Rose Gold
-    },
-    white: {
-      title: "Celestial Grace Earrings - White Gold",
-      price: "₹2399",
-      oldPrice: "₹2699",
-      desc: "White Gold finish with lab-grown diamonds, perfect for all occasions.",
-      images: [white1, white2, img1],
-      color: "bg-gray-300", // White Gold
-    },
-    yellow: {
-      title: "Celestial Grace Earrings - Yellow Gold",
-      price: "₹2499",
-      oldPrice: "₹2799",
-      desc: "Yellow Gold finish with diamonds, timeless elegance.",
-      images: [img1, rose1],
-      color: "bg-yellow-400", // Yellow Gold
-    },
-  };
+  const params = useParams();
+  const [qs] = useSearchParams();
 
-  const products = [
-    { id: 1, title: "Brilliant Round cut Everglow jewels", oldPrice: "₹3299", price: "₹2699", image: rose1 },
-    { id: 2, title: "Elegant Gold Necklace", oldPrice: "₹4999", price: "₹4599", image: rose2 },
-    { id: 3, title: "Classic Diamond Ring", oldPrice: "₹5999", price: "₹5599", image: white1 },
-  ];
+  // accept /:id or ?id=... or ?productId=...
+  const productId = params.id || qs.get("id") || qs.get("productId");
 
-  const [variant, setVariant] = useState("rose");
+  const [product, setProduct] = useState(null);
+  const [variant, setVariant] = useState("rose"); // UI chip: 'rose' | 'white' | 'yellow'
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [fetchErr, setFetchErr] = useState("");
+
   const mainSwiperRef = useRef(null);
+  const navigate = useNavigate();
+  const { add } = useCart();
 
+  /* ---------- actions ---------- */
+  const handleAddToCart = async () => {
+    if (!isAuthenticated()) return navigate("/auth");
+    if (loading || !product?._id) return; // guard
+    await add(product._id, 1, selectedColor || null);
+  };
+
+  const handleBuyNow = async () => {
+    if (!isAuthenticated()) return navigate("/auth");
+    if (loading || !product?._id) return; // guard
+    await add(product._id, 1, selectedColor || null);
+    navigate("/cart");
+  };
+
+  /* ---------- fetch product ---------- */
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
+    let mounted = true;
+    (async () => {
+      try {
+        setLoading(true);
+        setFetchErr("");
+        setProduct(null);
 
+        if (!productId) {
+          setFetchErr("No product id found in route/query.");
+          return;
+        }
+
+        // Primary: POST body { productId } (your original contract)
+        const { data } = await axios.post(`${backendUrl}/product/single`, { productId, _id: productId });
+        if (!mounted) return;
+
+        // Accept a few common shapes
+        const maybeProduct =
+          data?.product ??
+          data?.data?.product ??
+          (data?.success ? data.product : null);
+
+        if (!maybeProduct) {
+          console.warn("[MoreInfo2] Unexpected response for product/single:", data);
+          setFetchErr("Product not found.");
+          setProduct(null);
+          return;
+        }
+
+        setProduct(maybeProduct);
+      } catch (err) {
+        console.error("[MoreInfo2] Fetch error:", err);
+        setFetchErr(err?.message || "Failed to load product.");
+        setProduct(null);
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, [productId]);
+
+  // default chip from backend color (if present)
+ useEffect(() => {
+  if (product?.defaultColor) {
+    // handle "rose" or "rose-gold" etc.
+    setVariant(mapApiToUi(mapUiToColor(product.defaultColor)));
+  }
+}, [product?.defaultColor]);
+
+  /* ---------- derived fields ---------- */
+  const name = product?.name || "—";
+  const desc = product?.description || "";
+  const price = Number(product?.price || 0);
+  const discount = Number(product?.discountPrice || 0);
+  const hasDiscount = discount > 0 && discount < price;
+  const finalPrice = hasDiscount ? discount : price;
+  const pct = hasDiscount
+    ? product?.discountPercentage ?? Math.round(((price - discount) / (price || 1)) * 100)
+    : 0;
+
+  // details
+  const specs = product?.specs || {};
+
+  // colors available (canonical) -> MUST come before using selectedColor anywhere
+  // const availableColors = useMemo(
+  //   () => (product?.imagesByColor ? Object.keys(product.imagesByColor).map(normalize) : []),
+  //   [product]
+  // );
+  const availableColors = useMemo(() => {
+  const src = product?.imagesByColor;
+  if (!src || typeof src !== "object") return [];
+  const keys = Object.keys(src).map(mapUiToColor).filter(Boolean); // <-- use canonical
+  return Array.from(new Set(keys));
+}, [product]);
+
+  // selected canonical color (if available)
+  const selectedColor = useMemo(() => {
+    const want = mapUiToColor(variant);
+    return availableColors.includes(want) ? want : null;
+  }, [variant, availableColors]);
+
+  // purity – now safely depends on selectedColor
+  const purity = useMemo(() => {
+    const map = product?.caratByColor || {};
+    const chosen = selectedColor && map[selectedColor];
+    return chosen || map.gold || "14k Yellow Gold";
+  }, [product?.caratByColor, selectedColor]);
+
+  // Normalize image field to array
+  const rawImages = useMemo(() => {
+    if (!product?.image) return [];
+    return Array.isArray(product.image) ? product.image : [product.image];
+  }, [product]);
+
+  const allImages = useMemo(
+    () => (rawImages.length ? rawImages : [img1]),
+    [rawImages]
+  );
+
+  // 1) if backend sends grouped images
+  // const imagesByColorFromApi =
+  //   product?.imagesByColor && typeof product.imagesByColor === "object"
+  //     ? {
+  //         gold: Array.isArray(product.imagesByColor.gold) ? product.imagesByColor.gold : [],
+  //         "rose-gold": Array.isArray(product.imagesByColor["rose-gold"])
+  //           ? product.imagesByColor["rose-gold"]
+  //           : [],
+  //         "white-gold": Array.isArray(product.imagesByColor["white-gold"])
+  //           ? product.imagesByColor["white-gold"]
+  //           : [],
+  //       }
+  //     : null;
+
+  // 1) if backend sends grouped images (normalize keys like "rose" -> "rose-gold")
+const imagesByColorFromApi = useMemo(() => {
+  const src = product?.imagesByColor;
+  if (!src || typeof src !== "object") return null;
+
+  const out = { gold: [], "rose-gold": [], "white-gold": [] };
+  for (const [rawKey, arr] of Object.entries(src)) {
+    const key = mapUiToColor(rawKey);              // <-- normalize every key
+    if (!key || !Array.isArray(arr)) continue;
+    out[key].push(...arr.filter(Boolean));
+  }
+  return out;
+}, [product]);
+
+
+  // buckets
+  const buckets = useMemo(() => {
+    const out = { gold: [], "rose-gold": [], "white-gold": [], others: [] };
+    if (imagesByColorFromApi) {
+      out.gold = imagesByColorFromApi.gold;
+      out["rose-gold"] = imagesByColorFromApi["rose-gold"];
+      out["white-gold"] = imagesByColorFromApi["white-gold"];
+      const used = new Set([...out.gold, ...out["rose-gold"], ...out["white-gold"]]);
+      out.others = allImages.filter((src) => !used.has(src));
+      return out;
+    }
+    out.others = allImages;
+    return out;
+  }, [imagesByColorFromApi, allImages]);
+
+  // images to show
+  const imagesToShow = useMemo(() => {
+    const want = selectedColor || mapUiToColor(variant);
+    const primary = (want && buckets[want]) ? buckets[want] : [];
+    const order = ["gold", "rose-gold", "white-gold", "others"].filter((k) => k !== want);
+    const rest = order.flatMap((k) => buckets[k] || []);
+    const result = [...primary, ...rest];
+    return result.length ? result : allImages;
+  }, [buckets, selectedColor, variant, allImages]);
+
+  
+  // UI-visible color chips
+  const uiChips = useMemo(() => {
+    const fromApi = availableColors.length
+      ? availableColors.map(mapApiToUi).filter((x) => ["rose", "white", "yellow"].includes(x))
+      : ["rose", "white", "yellow"];
+    return ["rose", "white", "yellow"].filter((c) => fromApi.includes(c));
+  }, [availableColors]);
+
+
+  // related demo cards (use real product image as placeholder)
+  const productsDemo = [
+    {
+      id: 1,
+      title: "Brilliant Round cut Everglow jewels",
+      oldPrice: `₹${formatIN(3299)}`,
+      price: `₹${formatIN(2699)}`,
+      image: imagesToShow[0] || img1,
+    },
+    {
+      id: 2,
+      title: "Elegant Gold Necklace",
+      oldPrice: `₹${formatIN(4999)}`,
+      price: `₹${formatIN(4599)}`,
+      image: imagesToShow[1] || imagesToShow[0] || img1,
+    },
+    {
+      id: 3,
+      title: "Classic Diamond Ring",
+      oldPrice: `₹${formatIN(5999)}`,
+      price: `₹${formatIN(5599)}`,
+      image: imagesToShow[2] || imagesToShow[0] || img1,
+    },
+  ];
+
+  /* ---------- loading ---------- */
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="w-12 h-12 border-4 border-[#CEBB98] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-[#CEBB98] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
-  const currentProduct = productVariants[variant];
+  // If fetch finished but we still have no product, show a friendly state
+  if (!product) {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+        <h2 className="text-2xl font-semibold mb-2">Product not found</h2>
+        <p className="text-gray-600 mb-6">{fetchErr || "We couldn’t load this product."}</p>
+        <button
+          onClick={() => window.history.back()}
+          className="px-5 py-3 rounded-md bg-black text-white"
+        >
+          Go back
+        </button>
+      </div>
+    );
+  }
 
+  /* ================================================== */
   return (
     <>
       {/* MAIN PRODUCT SECTION */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* LEFT SIDE IMAGES */}
         <div className="flex flex-col w-full">
-          {/* Main Image Swiper */}
+          {/* Main Swiper with Zoom */}
           <Swiper
             modules={[Autoplay, Thumbs]}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             loop
             slidesPerView={1}
             onSwiper={(swiper) => (mainSwiperRef.current = swiper)}
-            thumbs={{ swiper: thumbsSwiper }}
+            // Safely pass thumbs swiper (avoid destroyed instance)
+            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
             className="w-full rounded-xl"
           >
-            {currentProduct.images.map((img, index) => (
+            {imagesToShow.map((img, index) => (
               <SwiperSlide key={index}>
                 <div className="flex justify-center items-center px-1 py-1 w-full h-[400px] sm:h-[500px] md:h-[600px]">
                   <InnerImageZoom
@@ -104,21 +329,18 @@ const MoreInfo2 = () => {
             ))}
           </Swiper>
 
-          {/* Thumbnails Swiper */}
+          {/* Thumbnails */}
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
             watchSlidesProgress
-            slidesPerView="auto"   // 👈 ek hi line me rakhega
-            freeMode={true}        // 👈 scroll kar sakte ho ek line me
+            slidesPerView="auto"
+            freeMode
             modules={[Thumbs, Autoplay]}
             className="mt-4 w-full flex"
           >
-            {currentProduct.images.map((img, index) => (
-              <SwiperSlide
-                key={index}
-                className="!w-20 sm:!w-24" // 👈 fix width thumbnails ek line me
-              >
+            {imagesToShow.map((img, index) => (
+              <SwiperSlide key={index} className="!w-20 sm:!w-24">
                 <img
                   src={img}
                   alt={`thumb-${index}`}
@@ -127,65 +349,85 @@ const MoreInfo2 = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
         </div>
 
         {/* RIGHT SIDE DETAILS */}
         <div className="w-full flex flex-col space-y-6">
           {/* Info */}
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold leading-snug">
-              {currentProduct.title}
-            </h2>
+            <h2 className="text-xl sm:text-2xl font-bold leading-snug">{name}</h2>
             <div className="flex flex-wrap items-center gap-3 mt-3">
-              <span className="text-lg sm:text-2xl font-bold">
-                {currentProduct.price}
-              </span>
-              <span className="text-gray-500 line-through text-sm sm:text-base">
-                {currentProduct.oldPrice}
-              </span>
-              <span className="bg-gray-100 text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full border">
-                Sale 10%
-              </span>
+              <span className="text-lg sm:text-2xl font-bold">₹{formatIN(finalPrice)}</span>
+              {hasDiscount && (
+                <span className="text-gray-500 line-through text-sm sm:text-base">
+                  ₹{formatIN(price)}
+                </span>
+              )}
+              {hasDiscount && (
+                <span className="bg-gray-100 text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full border">
+                  Sale {pct}%
+                </span>
+              )}
             </div>
-            <p className="text-sm sm:text-base text-gray-600 mt-3 leading-relaxed">
-              {currentProduct.desc}
-            </p>
+            <p className="text-sm sm:text-base text-gray-600 mt-3 leading-relaxed">{desc}</p>
           </div>
 
-          {/* Buttons */}
+          {/* Buttons + Color Chips */}
           <div className="flex flex-col gap-4 w-full">
             <div className="flex flex-col sm:flex-row gap-3 items-center w-full">
               {/* Buy Now */}
-              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition">
+              <button
+                onClick={handleBuyNow}
+                disabled={!product?._id}
+                className={`flex-1 py-3 rounded-md font-semibold transition ${
+                  product?._id
+                    ? "bg-[#CEBB98] text-white hover:bg-black"
+                    : "bg-gray-300 text-gray-600 cursor-not-allowed"
+                }`}
+              >
                 Buy Now
               </button>
 
               {/* Add to Cart */}
-              <button className="flex-1 bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition">
+              <button
+                onClick={handleAddToCart}
+                disabled={!product?._id}
+                className={`flex-1 py-3 rounded-md font-semibold transition ${
+                  product?._id
+                    ? "bg-[#CEBB98] text-white hover:bg-black"
+                    : "bg-gray-300 text-gray-600 cursor-not-allowed"
+                }`}
+              >
                 Add to Cart
               </button>
 
-              {/* Variant Buttons */}
+              {/* Variant Buttons (show other available colors; hide current) */}
               <div className="flex gap-2">
-                {Object.keys(productVariants).map((key) => {
-                  if (key === variant) return null; // Hide current
-                  return (
+                {uiChips
+                  .filter((key) => key !== variant)
+                  .map((key) => (
                     <button
                       key={key}
                       onClick={() => setVariant(key)}
-                      className={`w-8 h-8 rounded-full ${productVariants[key].color} border hover:scale-110 transition`}
-                      title={productVariants[key].title}
-                    ></button>
-                  );
-                })}
+                      className={`w-8 h-8 rounded-full ${CHIP_CLASS[key]} border hover:scale-110 transition`}
+                      title={key}
+                      aria-label={`Select ${key} color`}
+                    />
+                  ))}
               </div>
             </div>
 
             {/* WhatsApp */}
-            <button className="w-full bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition">
+            <a
+              href={`https://wa.me/?text=${encodeURIComponent(
+                `Hi, I'm interested in ${name} (${productId}).`
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full text-center bg-[#CEBB98] text-white py-3 rounded-md font-semibold hover:bg-black transition"
+            >
               Order on WhatsApp
-            </button>
+            </a>
           </div>
 
           {/* Offers */}
@@ -228,13 +470,17 @@ const MoreInfo2 = () => {
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg shadow p-4">
               <h3 className="text-lg font-semibold text-yellow-700 mb-2">Weight</h3>
-              <p className="text-sm text-gray-700">Gross (Product) - 1.291</p>
-              <p className="text-sm text-gray-700">Net (Gold) - 1.005</p>
+              <p className="text-sm text-gray-700">
+                Gross (Product) - {specs.productWeight ?? "N/A"}
+              </p>
+              <p className="text-sm text-gray-700">Net (Gold) - {specs.goldWeight ?? "N/A"}</p>
             </div>
 
             <div className="bg-white rounded-lg shadow p-4">
               <h3 className="text-lg font-semibold text-yellow-700 mb-2">Purity</h3>
-              <p className="text-sm text-gray-700">14k Yellow Gold</p>
+              <p className="text-sm text-gray-700">
+                {purity} {product?.defaultColor ? `(${product.defaultColor})` : ""}
+              </p>
             </div>
 
             <div className="bg-white rounded-lg shadow p-4 sm:col-span-2">
@@ -242,7 +488,7 @@ const MoreInfo2 = () => {
                 Diamond and Gemstones
               </h3>
               <p className="text-sm text-gray-700 mb-2">
-                Weight 1.43 &nbsp;&nbsp; Diamonds - Lab Grown Diamonds
+                Weight {specs.diamondCarat ?? "—"} &nbsp;&nbsp; Diamonds - Lab Grown Diamonds
               </p>
               <table className="w-full border-collapse text-sm text-gray-700">
                 <thead>
@@ -255,10 +501,10 @@ const MoreInfo2 = () => {
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-300">
-                    <td className="py-2">E-F</td>
-                    <td className="py-2">VVS-VS</td>
-                    <td className="py-2">Round</td>
-                    <td className="py-2">3</td>
+                    <td className="py-2">{specs.diamondColor || "E-F"}</td>
+                    <td className="py-2">{specs.diamondClarity || "VVS-VS"}</td>
+                    <td className="py-2">{specs.diamondShape || "—"}</td>
+                    <td className="py-2">{specs.numberOfDiamonds ?? "—"}</td>
                   </tr>
                 </tbody>
               </table>
@@ -269,31 +515,36 @@ const MoreInfo2 = () => {
           <div className="h-full self-stretch">
             <div className="bg-white rounded-lg shadow p-4 h-full flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-yellow-700 mb-3">
-                  Price Breakup
-                </h3>
+                <h3 className="text-lg font-semibold text-yellow-700 mb-3">Price Breakup</h3>
                 <div className="flex justify-between text-sm text-gray-700 mb-1">
-                  <span>Gold</span>
-                  <span>Rs.5517.00</span>
+                  <span>Base Price</span>
+                  <span>₹{formatIN(price)}</span>
                 </div>
+                {hasDiscount && (
+                  <div className="flex justify-between text-sm text-gray-700 mb-1">
+                    <span>Discount</span>
+                    <span>-₹{formatIN(price - discount)}</span>
+                  </div>
+                )}
                 <div className="flex justify-between text-sm text-gray-700 mb-1">
-                  <span className="line-through">Rs.40200.00</span>
-                  <span>Rs.32160.00</span>
-                </div>
-                <div className="flex justify-between text-sm text-gray-700 mb-1">
-                  <span className="line-through">Rs.2412.00</span>
-                  <span>Rs.1206.00</span>
+                  <span>Making Charge</span>
+                  <span>₹{formatIN(specs.makingCharge)}</span>
                 </div>
                 <div className="flex justify-between text-sm text-gray-700 mb-1">
                   <span>GST (3%)</span>
-                  <span>Rs.1166</span>
+                  <span>₹{formatIN(finalPrice * 0.03)}</span>
                 </div>
               </div>
               <div>
                 <hr className="my-2 border-gray-300" />
                 <div className="flex justify-between font-semibold text-gray-900">
                   <span>Total</span>
-                  <span>Rs.40049/-</span>
+                  <span>
+                    ₹
+                    {formatIN(
+                      finalPrice + (specs.makingCharge || 0) + Math.round(finalPrice * 0.03)
+                    )}
+                  </span>
                 </div>
               </div>
             </div>
@@ -305,8 +556,8 @@ const MoreInfo2 = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h3 className="text-xl font-semibold mb-6 text-center">Related Products</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {productsDemo.map((p) => (
+            <ProductCard key={p.id} product={p} />
           ))}
         </div>
       </div>

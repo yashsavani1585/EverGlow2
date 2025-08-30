@@ -1192,6 +1192,8 @@ import Logo from "../Logo/Logo";
 import NavBar from "../NavBar/NavBar";
 import { Link, useNavigate } from "react-router-dom";
 import SearchOverlay from "../SearchOverlay/SearchOverlay";
+import { logout } from "../../utils/auth";
+import {useCart} from "../../context/cartContext";
 
 const Header = () => {
   const [accountOpen, setAccountOpen] = useState(false);
@@ -1203,6 +1205,7 @@ const Header = () => {
 
   const accountRef = useRef(null);
   const searchRef = useRef(null);
+  const { count, wishCount, clear, clearWishlist} = useCart();
   const navigate = useNavigate();
 
   // dummy counts (backend se laa sakte ho)
@@ -1216,7 +1219,14 @@ const Header = () => {
       }
     };
     document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    const onAuth = () => setIsAuthenticated(!!localStorage.getItem("token"));
+    window.addEventListener("auth-change", onAuth);
+    window.addEventListener("storage", onAuth); // cross-tab
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      window.removeEventListener("auth-change", onAuth);
+      window.removeEventListener("storage", onAuth);
+    };
   }, []);
 
   const handleLinkClick = () => {
@@ -1287,9 +1297,9 @@ const Header = () => {
               <Link to="/wishlist" className="relative">
                 <div className="flex flex-col items-center cursor-pointer hover:text-black transition-colors">
                   <FaHeart className="text-xl" />
-                  {wishlistCount > 0 && (
+                  {wishCount > 0 && (
                     <span className="absolute -top-0 -right-0 bg-yellow-900 text-white text-[10px] px-1.5 rounded-full">
-                      {wishlistCount}
+                      {wishCount}
                     </span>
                   )}
                   <span className="hidden sm:block text-xs text-black">
@@ -1302,9 +1312,9 @@ const Header = () => {
               <Link to="/cart" className="relative">
                 <div className="flex flex-col items-center cursor-pointer hover:text-black transition-colors">
                   <FaShoppingCart className="text-xl" />
-                  {cartCount > 0 && (
+                  {count > 0 && (
                     <span className="absolute -top-0 -right-2 bg-yellow-900 text-white text-[10px] px-1.5 rounded-full">
-                      {cartCount}
+                      {count}
                     </span>
                   )}
                   <span className="hidden sm:block text-xs text-black">
@@ -1360,8 +1370,11 @@ const Header = () => {
                     </Link>
                     <li
                       onClick={() => {
+                        logout(); 
+                        clearWishlist(); 
                         setIsAuthenticated(false);
                         handleLinkClick();
+                        navigate("/auth");  
                       }}
                       className="hover:text-red-600 mb-2 cursor-pointer"
                     >
